@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.shoppingmanager.dao.UserDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.example.shoppingmanager.entity.UserEntity" id="userMap">
+        <result property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="nickName" column="nick_name"/>
+        <result property="phoneNumber" column="phone_number"/>
+        <result property="email" column="email"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="createTime" column="create_time"/>
+        <result property="status" column="status"/>
+        <result property="role" column="role"/>
+    </resultMap>
+
+    <select id="queryObject" resultMap="userMap">
+        select * from user_main where id = #{id}
+    </select>
+
+	<select id="queryObjectByName" resultMap="userMap">
+		select * from user_main where name = #{name}
+	</select>
+
+	<select id="queryList" resultMap="userMap">
+		select user_main.id,name,phone_number,email,nick_name,`status`,role,user_main.create_time,user_main.update_time from user_detail,user_main
+		<where>
+			<if test="name != null and name.trim() != ''">
+				and name = #{name}
+			</if>
+			<if test="email != null and email.trim() != ''">
+				and	 email = #{email}
+			</if>
+			and user_main.id=user_detail.user_id
+		</where>
+
+        <choose>
+            <when test="sidx != null and sidx.trim() != ''">
+                order by ${sidx} ${order}
+            </when>
+			<otherwise>
+                order by id desc
+			</otherwise>
+        </choose>
+		<if test="offset != null and limit != null">
+			limit #{offset}, #{limit}
+		</if>
+	</select>
+	
+ 	<select id="queryTotal" resultType="int">
+		select count(*) from user_main
+	</select>
+
+	<insert id="save" parameterType="com.example.shoppingmanager.entity.UserMain" useGeneratedKeys="true" keyProperty="id">
+		insert into user_main
+		(
+		`name`,
+		`email`,
+		`nick_name`,
+		`status`,
+		`create_time`,
+		`role`
+		)
+		values
+		(
+		#{name},
+		#{email},
+		#{nickName},
+		#{status},
+		#{createTime},
+		#{role}
+		)
+	</insert>
+
+	<insert id="saveDetail" parameterType="com.example.shoppingmanager.entity.UserMainDetail" useGeneratedKeys="true" keyProperty="id">
+		insert into user_detail
+		(
+		`password`,
+		`phone_number`,
+		`create_time`,
+		`user_id`
+		)
+		values
+		(
+		#{password},
+		#{phoneNumber},
+		#{createTime},
+		#{userId}
+		)
+	</insert>
+
+    <!--<insert id="saveSelective" parameterType="com.example.demo.entity.StudentEntity" useGeneratedKeys="true" keyProperty="id">-->
+        <!--insert into student-->
+        <!--(-->
+														<!--<if test="name != null">-->
+                <!--`name`,                 </if>-->
+												<!--<if test="sex != null">-->
+                <!--`sex`,                 </if>-->
+												<!--<if test="password != null">-->
+                <!--`password`,                 </if>-->
+												<!--<if test="phone != null">-->
+                <!--`phone`,                 </if>-->
+												<!--<if test="email != null">-->
+                <!--`email`,                 </if>-->
+												<!--<if test="lastIp != null">-->
+                <!--`last_ip`,                 </if>-->
+												<!--<if test="lastTime != null">-->
+                <!--`last_time`,                 </if>-->
+												<!--<if test="regTime != null">-->
+                <!--`reg_time`,                 </if>-->
+												<!--<if test="balance != null">-->
+                <!--`balance`,                 </if>-->
+												<!--<if test="isabled != null">-->
+                <!--`isabled`,                 </if>-->
+												<!--<if test="loginTimes != null">-->
+                <!--`login_times`                </if>-->
+					        <!--)-->
+        <!--values-->
+        <!--(-->
+														<!--<if test="name != null">-->
+                    <!--#{name}, 				</if>-->
+												<!--<if test="sex != null">-->
+                    <!--#{sex}, 				</if>-->
+												<!--<if test="password != null">-->
+                    <!--#{password}, 				</if>-->
+												<!--<if test="phone != null">-->
+                    <!--#{phone}, 				</if>-->
+												<!--<if test="email != null">-->
+                    <!--#{email}, 				</if>-->
+												<!--<if test="lastIp != null">-->
+                    <!--#{lastIp}, 				</if>-->
+												<!--<if test="lastTime != null">-->
+                    <!--#{lastTime}, 				</if>-->
+												<!--<if test="regTime != null">-->
+                    <!--#{regTime}, 				</if>-->
+												<!--<if test="balance != null">-->
+                    <!--#{balance}, 				</if>-->
+												<!--<if test="isabled != null">-->
+                    <!--#{isabled}, 				</if>-->
+												<!--<if test="loginTimes != null">-->
+                    <!--#{loginTimes}				</if>-->
+					        <!--)-->
+    <!--</insert>-->
+
+
+
+	<!--<update id="updateSelective" parameterType="com.example.demo.entity.StudentEntity">-->
+		<!--update student -->
+		<!--<set>-->
+			<!--<if test="name != null">`name` = #{name}, </if>-->
+			<!--<if test="sex != null">`sex` = #{sex}, </if>-->
+			<!--<if test="password != null">`password` = #{password}, </if>-->
+			<!--<if test="phone != null">`phone` = #{phone}, </if>-->
+			<!--<if test="email != null">`email` = #{email}, </if>-->
+			<!--<if test="lastIp != null">`last_ip` = #{lastIp}, </if>-->
+			<!--<if test="lastTime != null">`last_time` = #{lastTime}, </if>-->
+			<!--<if test="regTime != null">`reg_time` = #{regTime}, </if>-->
+			<!--<if test="balance != null">`balance` = #{balance}, </if>-->
+			<!--<if test="isabled != null">`isabled` = #{isabled}, </if>-->
+			<!--<if test="loginTimes != null">`login_times` = #{loginTimes}</if>-->
+		<!--</set>-->
+		<!--where id = #{id}-->
+	<!--</update>-->
+
+    <!--<update id="update" parameterType="com.example.demo.entity.StudentEntity">-->
+        <!--update student-->
+        <!--<set>-->
+														                    <!--`name` = #{name}, 											                    `sex` = #{sex}, 											                    `password` = #{password}, 											                    `phone` = #{phone}, 											                    `email` = #{email}, 											                    `last_ip` = #{lastIp}, 											                    `last_time` = #{lastTime}, 											                    `reg_time` = #{regTime}, 											                    `balance` = #{balance}, 											                    `isabled` = #{isabled}, 											                    `login_times` = #{loginTimes}							        </set>-->
+        <!--where id = #{id}-->
+    <!--</update>-->
+	<!---->
+	<!--<delete id="delete">-->
+		<!--delete from student where id = #{value}-->
+	<!--</delete>-->
+	<!---->
+	<!--<delete id="deleteBatch">-->
+		<!--delete from student where id in -->
+		<!--<foreach item="id" collection="array" open="(" separator="," close=")">-->
+			<!--#{id}-->
+		<!--</foreach>-->
+	<!--</delete>-->
+
+	<!--<update id="forbidden">-->
+		<!--update student set isabled = 1 where id = #{id}-->
+	<!--</update>-->
+
+	<!--<update id="recover">-->
+		<!--update student set isabled = 2 where id = #{id}-->
+	<!--</update>-->
+
+</mapper>

@@ -32,7 +32,9 @@ public interface UserDao {
 
     void update(UserEntity tdSupplier);
 
-    void updateSelective(UserEntity tdSupplier);
+    void updateMain(UserMain userMain);
+
+    void updateDetail(UserMainDetail userMainDetail);
 
     void delete(Integer id);
 

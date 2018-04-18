@@ -19,6 +19,8 @@ public class UserMain {
 
     private LocalDateTime createTime;
 
+    private LocalDateTime updateTime;
+
     private Integer role;
 
     public Integer getId() {
@@ -75,5 +77,13 @@ public class UserMain {
 
     public void setRole(Integer role) {
         this.role = role;
+    }
+
+    public LocalDateTime getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(LocalDateTime updateTime) {
+        this.updateTime = updateTime;
     }
 }

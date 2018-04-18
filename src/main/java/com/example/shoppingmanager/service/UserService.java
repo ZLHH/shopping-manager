@@ -42,7 +42,9 @@ public class UserService {
 	
     public 	void update(UserEntity user){userDao.update(user);}
 
-	public void updateSelective(UserEntity user){userDao.updateSelective(user);}
+	public void updateMain(UserMain userMain){userDao.updateMain(userMain);}
+
+	public void updateDetail(UserMainDetail userMainDetail){userDao.updateDetail(userMainDetail);}
 	
 	public void delete(Integer id){userDao.delete(id);}
 	

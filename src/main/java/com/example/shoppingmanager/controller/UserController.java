@@ -87,8 +87,16 @@ public class UserController {
 	 */
 	@RequestMapping("/update")
 	public R update(@RequestBody UserEntity user){
-		userService.update(user);
-		
+		UserMain userMain = new UserMain();
+		UserMainDetail userMainDetail = new UserMainDetail();
+		userMain.setName(user.getName());
+		userMain.setEmail(user.getEmail());
+		userMain.setUpdateTime(LocalDateTime.now());
+		userService.updateMain(userMain);
+		userMainDetail.setPassword(user.getPassword());
+		userMainDetail.setPhoneNumber(user.getPhoneNumber());
+		userMainDetail.setUpdateTime(LocalDateTime.now());
+		userService.updateDetail(userMainDetail);
 		return R.ok();
 	}
 	

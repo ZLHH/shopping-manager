@@ -17,7 +17,7 @@
     </resultMap>
 
     <select id="queryObject" resultMap="userMap">
-        select * from user_main where id = #{id}
+        select  user_main.id,name,phone_number,email,password from user_detail,user_main where user_main.id = #{id} and user_detail.user_id=#{id}
     </select>
 
 	<select id="queryObjectByName" resultMap="userMap">
@@ -146,23 +146,37 @@
 
 
 
-	<!--<update id="updateSelective" parameterType="com.example.demo.entity.StudentEntity">-->
-		<!--update student -->
-		<!--<set>-->
-			<!--<if test="name != null">`name` = #{name}, </if>-->
-			<!--<if test="sex != null">`sex` = #{sex}, </if>-->
-			<!--<if test="password != null">`password` = #{password}, </if>-->
-			<!--<if test="phone != null">`phone` = #{phone}, </if>-->
-			<!--<if test="email != null">`email` = #{email}, </if>-->
-			<!--<if test="lastIp != null">`last_ip` = #{lastIp}, </if>-->
-			<!--<if test="lastTime != null">`last_time` = #{lastTime}, </if>-->
-			<!--<if test="regTime != null">`reg_time` = #{regTime}, </if>-->
-			<!--<if test="balance != null">`balance` = #{balance}, </if>-->
-			<!--<if test="isabled != null">`isabled` = #{isabled}, </if>-->
-			<!--<if test="loginTimes != null">`login_times` = #{loginTimes}</if>-->
-		<!--</set>-->
-		<!--where id = #{id}-->
-	<!--</update>-->
+	<update id="updateMain" parameterType="com.example.shoppingmanager.entity.UserMain">
+		update user_main
+		<set>
+			<if test="name != null">
+				`name` = #{name,jdbcType=VARCHAR},
+			</if>
+			<if test="email != null">
+				`email` = #{email,jdbcType=VARCHAR},
+			</if>
+			<if test="updateTime != null">
+				`update_time` = #{updateTime}
+			</if>
+		</set>
+		where id = #{id}
+	</update>
+
+	<update id="updateDetail" parameterType="com.example.shoppingmanager.entity.UserMainDetail">
+		update user_detail
+		<set>
+			<if test="password != null">
+				`password` = #{password,jdbcType=VARCHAR},
+			</if>
+			<if test="phoneNumber != null">
+				`phone_number` = #{phoneNumber,jdbcType=VARCHAR},
+			</if>
+			<if test="updateTime != null">
+				`update_time` = #{updateTime}
+			</if>
+		</set>
+		where user_id = #{id}
+	</update>
 
     <!--<update id="update" parameterType="com.example.demo.entity.StudentEntity">-->
         <!--update student-->

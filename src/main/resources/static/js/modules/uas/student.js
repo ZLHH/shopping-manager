@@ -157,7 +157,8 @@ var vm = new Vue({
             });
         },
         getInfo: function (id) {
-            $.get(baseURL + "" + id, function (r) {
+            console.log(id);
+            $.get(baseURL + "user/info/" + id, function (r) {
                 vm.student = r.student;
             });
         },

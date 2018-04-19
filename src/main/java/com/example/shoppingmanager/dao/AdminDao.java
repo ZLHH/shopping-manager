@@ -36,4 +36,6 @@ public interface AdminDao {
     void deleteBatch(Integer[] ids);
 
     List<AdminEntity> login(@Param("login") String login, @Param("password") String password);
+
+    void updateIp(String ip);
 }

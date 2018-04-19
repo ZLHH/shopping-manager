@@ -169,8 +169,6 @@ function getMyDate(str){
 }
 
 function getMyDateTime(str){
-    if (str=null)
-        return str;
     var oDate = new Date(str),
         oYear = oDate.getFullYear(),
         oMonth = oDate.getMonth()+1,

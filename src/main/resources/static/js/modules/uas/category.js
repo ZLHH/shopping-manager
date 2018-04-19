@@ -72,11 +72,11 @@ var vm = new Vue({
             if (id == null) {
                 return;
             }
-            confirm('确定要禁用的学员？', function () {
+            confirm('确定要禁用所选的用户？', function () {
                 console.log("id = " + id)
                 $.ajax({
                     type: "POST",
-                    url: baseURL + "",
+                    url: baseURL + "user/forbidden",
                     data: {
                         "id": id
                     } ,
@@ -95,10 +95,10 @@ var vm = new Vue({
         recover: function () {
             var id = getSelectedRow();
 
-            confirm('确定要禁用所选的学员？', function () {
+            confirm('确定要恢复所选的用户？', function () {
                 $.ajax({
                     type: "POST",
-                    url: baseURL + "",
+                    url: baseURL + "user/recover",
                     data:  {
                         "id": id
                     },
@@ -138,10 +138,11 @@ var vm = new Vue({
                 return;
             }
 
+            console.log(ids);
             confirm('确定要删除选中的记录？', function () {
                 $.ajax({
                     type: "POST",
-                    url: baseURL + "",
+                    url: baseURL + "user/delete",
                     contentType: "application/json",
                     data: JSON.stringify(ids),
                     success: function (r) {

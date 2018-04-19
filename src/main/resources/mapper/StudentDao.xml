@@ -188,20 +188,20 @@
 	<!--<delete id="delete">-->
 		<!--delete from student where id = #{value}-->
 	<!--</delete>-->
-	<!---->
-	<!--<delete id="deleteBatch">-->
-		<!--delete from student where id in -->
-		<!--<foreach item="id" collection="array" open="(" separator="," close=")">-->
-			<!--#{id}-->
-		<!--</foreach>-->
-	<!--</delete>-->
 
-	<!--<update id="forbidden">-->
-		<!--update student set isabled = 1 where id = #{id}-->
-	<!--</update>-->
+	<delete id="deleteBatch">
+		DELETE user_main,user_detail from user_main LEFT JOIN user_detail ON user_main.id=user_detail.user_id WHERE  user_main.id in
+		<foreach item="id" collection="array" open="(" separator="," close=")">
+			#{id}
+		</foreach>
+	</delete>
 
-	<!--<update id="recover">-->
-		<!--update student set isabled = 2 where id = #{id}-->
-	<!--</update>-->
+	<update id="forbidden">
+		update user_main set status = 1 where id = #{id}
+	</update>
+
+	<update id="recover">
+		update user_main set status = 0 where id = #{id}
+	</update>
 
 </mapper>

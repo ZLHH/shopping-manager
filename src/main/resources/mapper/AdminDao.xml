@@ -107,7 +107,12 @@
     <update id="update" parameterType="com.example.shoppingmanager.entity.AdminEntity">
         update admin
         <set>
-														                    `login` = #{login}, 											                    `password` = #{password}, 											                    `last_time` = #{lastTime}, 											                    `last_ip` = #{lastIp}, 											                    `name` = #{name}							        </set>
+			`login` = #{login},
+			`password` = #{password},
+			`last_time` = #{lastTime},
+			`last_ip` = #{lastIp},
+			`name` = #{name}
+		</set>
         where id = #{id}
     </update>
 	

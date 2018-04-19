@@ -89,6 +89,7 @@ public class UserController {
 	public R update(@RequestBody UserEntity user){
 		UserMain userMain = new UserMain();
 		UserMainDetail userMainDetail = new UserMainDetail();
+		userMain.setId(user.getId());
 		userMain.setName(user.getName());
 		userMain.setEmail(user.getEmail());
 		userMain.setUpdateTime(LocalDateTime.now());
@@ -96,6 +97,7 @@ public class UserController {
 		userMainDetail.setPassword(user.getPassword());
 		userMainDetail.setPhoneNumber(user.getPhoneNumber());
 		userMainDetail.setUpdateTime(LocalDateTime.now());
+		userMainDetail.setUserId(user.getId());
 		userService.updateDetail(userMainDetail);
 		return R.ok();
 	}

@@ -58,7 +58,7 @@ var vm = new Vue({
 
 //路由
 var router = new Router();
-var menus = ["welcome.html", "student.html", "admin.html"];
+var menus = ["welcome.html", "order.html","category.html","product.html","information.html","user.html", "admin.html","cooperation.html"];
 routerList(router, menus);
 router.start();
 

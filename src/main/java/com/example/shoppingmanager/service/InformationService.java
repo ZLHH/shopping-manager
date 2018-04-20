@@ -23,10 +23,6 @@ public class InformationService {
         return informationDao.queryObject(id);
     }
 
-    public UserEntity queryObjectByName(String name){
-        return informationDao.queryObjectByName(name);
-    }
-
     public List<Information> queryList(Map<String, Object> map){return informationDao.queryList(map);}
 
     public  int queryTotal(Map<String, Object> map){return informationDao.queryTotal(map);}

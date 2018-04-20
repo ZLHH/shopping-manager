@@ -17,23 +17,13 @@ public interface InformationDao {
 
     Information queryObject(Integer id);
 
-    UserEntity queryObjectByName(String name);
-
     List<Information> queryList(Map<String, Object> map);
 
     int queryTotal(Map<String, Object> map);
 
     void save(Information information);
 
-    void saveDetail(UserMainDetail userMainDetail);
-
     void update(Information information);
-
-    void updateMain(UserMain userMain);
-
-    void updateDetail(UserMainDetail userMainDetail);
-
-    void delete(Integer id);
 
     void deleteBatch(Integer[] ids);
 

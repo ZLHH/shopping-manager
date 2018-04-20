@@ -1,13 +1,13 @@
 $(function () {
     $("#jqGrid").jqGrid({
-        url: baseURL + 'user/list',
+        url: baseURL + 'info/list',
         datatype: "json",
         colModel: [
             {label: 'id', name: 'id', index: 'id', width: 50, key: true},
-            {label: '资讯标题', name: 'name', index: 'name', width: 80},
-            {label: '资讯正文', name: 'email', index: 'email', width: 80},
+            {label: '资讯标题', name: 'title', index: 'title', width: 80},
+            {label: '资讯正文', name: 'information', index: 'information', width: 80},
             {label: '创建时间', name: 'createTime', index: 'create_time', width: 80, formatter: getMyDateTime},
-            {label: '修改时间', name: 'createTime', index: 'create_time', width: 80, formatter: getMyDateTime},
+            {label: '修改时间', name: 'updateTime', index: 'update_time', width: 80, formatter: getMyDateTime},
         ],
         viewrecords: true,
         height: 385,
@@ -45,6 +45,9 @@ var vm = new Vue({
         q: {}
     },
     methods: {
+        query: function () {
+            vm.reload();
+        },
         add: function () {
             vm.showList = false;
             vm.title = "新增";
@@ -58,7 +61,69 @@ var vm = new Vue({
             vm.showList = false;
             vm.title = "修改";
 
-            // vm.getInfo(id)
+            vm.getInfo(id)
         },
+
+        saveOrUpdate: function (event) {
+            console.log(vm.info.id);
+            var url = vm.info.id == null ? "info/save" : "info/update";
+            console.log(JSON.stringify(vm.info));
+            $.ajax({
+                type: "POST",
+                url: baseURL + url,
+                contentType: "application/json",
+                data: JSON.stringify(vm.info),
+                success: function (r) {
+                    if (r.code === 0) {
+                        alert('操作成功', function (index) {
+                            vm.reload();
+                        });
+                    } else {
+                        alert(r.msg);
+                    }
+                }
+            });
+        },
+
+        del: function (event) {
+            var ids = getSelectedRows();
+            if (ids == null) {
+                return;
+            }
+
+            confirm('确定要删除选中的记录？', function () {
+                $.ajax({
+                    type: "POST",
+                    url: baseURL + "info/delete",
+                    contentType: "application/json",
+                    data: JSON.stringify(ids),
+                    success: function (r) {
+                        if (r.code == 0) {
+                            alert('操作成功', function (index) {
+                                $("#jqGrid").trigger("reloadGrid");
+                            });
+                        } else {
+                            alert(r.msg);
+                        }
+                    }
+                });
+            });
+        },
+        getInfo: function (id) {
+            console.log(id);
+            $.get(baseURL + "info/info/" + id, function (r) {
+                vm.info = r.info;
+            });
+        },
+
+        reload: function (event) {
+            vm.showList = true;
+            var page = $("#jqGrid").jqGrid('getGridParam', 'page');
+            console.log(vm.q);
+            $("#jqGrid").jqGrid('setGridParam', {
+                page: page,
+                postData: vm.q
+            }).trigger("reloadGrid");
+        }
     }
 });

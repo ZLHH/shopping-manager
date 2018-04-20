@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.shoppingmanager.dao.InformationDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.example.shoppingmanager.entity.Information" id="informationMap">
+        <result property="id" column="id"/>
+        <result property="title" column="title"/>
+        <result property="information" column="information"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="createTime" column="create_time"/>
+    </resultMap>
+
+
+	<select id="queryObject" resultMap="informationMap">
+		select  id,title,information from information where id = #{id}
+	</select>
+
+
+	<select id="queryList" resultMap="informationMap">
+		select * from information
+		<where>
+			<if test="title != null and title.trim() != ''">
+				and title = #{title}
+			</if>
+		</where>
+
+        <choose>
+            <when test="sidx != null and sidx.trim() != ''">
+                order by ${sidx} ${order}
+            </when>
+			<otherwise>
+                order by id desc
+			</otherwise>
+        </choose>
+		<if test="offset != null and limit != null">
+			limit #{offset}, #{limit}
+		</if>
+	</select>
+	
+ 	<select id="queryTotal" resultType="int">
+		select count(*) from information
+	</select>
+
+	<insert id="save" parameterType="com.example.shoppingmanager.entity.Information" useGeneratedKeys="true" keyProperty="id">
+		insert into information
+		(
+		`title`,
+		`information`,
+		`create_time`
+		)
+		values
+		(
+		#{title},
+		#{information},
+		#{createTime}
+		)
+	</insert>
+
+
+    <update id="update" parameterType="com.example.shoppingmanager.entity.Information">
+        update information
+        <set>
+			<if test="title != null">
+				`title` = #{title},
+			</if>
+			<if test="information != null">
+				`information` = #{information},
+			</if>
+			<if test="updateTime != null">
+				`update_time` = #{updateTime}
+			</if>
+		</set>
+        where id = #{id}
+    </update>
+
+	<!--<delete id="delete">-->
+		<!--delete from student where id = #{value}-->
+	<!--</delete>-->
+
+	<delete id="deleteBatch">
+		DELETE  from information  WHERE  id in
+		<foreach item="id" collection="array" open="(" separator="," close=")">
+			#{id}
+		</foreach>
+	</delete>
+
+
+</mapper>

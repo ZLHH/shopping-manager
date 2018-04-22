@@ -25,20 +25,19 @@
         <div class="grid-btn">
 
             <div class="form-group col-md-1">
-                <input id="studentName" type="text" placeholder="用户名" class="form-control"
-                       v-model="q.studentName"
+                <input id="studentName" type="text" placeholder="订单号" class="form-control"
+                       v-model="q.orderId"
                        @keyup.enter="query"/>
             </div>
             <div class="form-group col-md-1">
-                <input id="email" type="text" placeholder="注册邮箱" class="form-control" v-model="q.email"
+                <input id="email" type="text" placeholder="电话号码" class="form-control" v-model="q.buyerPhone"
                        @keyup.enter="query"/>
             </div>
             <a class="btn btn-default" @click="query">查询</a>
             <a class="btn btn-primary" @click="add"><i class="fa fa-plus"></i>&nbsp;新增</a>
             <a class="btn btn-primary" @click="update"><i class="fa fa-pencil-square-o"></i>&nbsp;修改</a>
             <a class="btn btn-primary" @click="del"><i class="fa fa-trash-o"></i>&nbsp;删除</a>
-            <a class="btn btn-danger" @click="forbidden"><i class="fa fa-trash-o"></i>&nbsp;禁用</a>
-            <a class="btn btn-success" @click="recover"><i class="fa fa-trash-o"></i>&nbsp;恢复</a>
+            <a class="btn btn-danger" @click="forbidden"><i class="fa fa-trash-o"></i>&nbsp;完成订单</a>
 
         </div>
         <table id="jqGrid"></table>

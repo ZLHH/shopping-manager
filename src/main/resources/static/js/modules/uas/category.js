@@ -1,17 +1,13 @@
 $(function () {
     $("#jqGrid").jqGrid({
-        url: baseURL + 'user/list',
+        url: baseURL + 'category/list',
         datatype: "json",
         colModel: [
-            {label: 'id', name: 'id', index: 'id', width: 50, key: true},
-            {label: '用户名', name: 'name', index: 'name', width: 80},
-            {label: '邮箱', name: 'email', index: 'email', width: 80},
-            {label: '昵称', name: 'nickName', index: 'nick_name', width: 80},
-            {label: '电话', name: 'phoneNumber', index: 'phone_number', width: 80},
-            {label: '角色', name: 'role', index: 'role', width: 80,formatter:showRole},
-            {label: '修改时间', name: 'updateTime', index: 'update_time', width: 80, formatter: getMyDateTime},
-            {label: '注册时间', name: 'createTime', index: 'create_time', width: 80, formatter: getMyDateTime},
-            {label: '账户状态', name: 'status', index: 'status', width: 80, formatter: showabled},
+            {label: 'id', name: 'categoryId', index: 'category_id', width: 50, key: true},
+            {label: '类目名字', name: 'categoryName', index: 'category_name', width: 80},
+            {label: '类目编号', name: 'categoryType', index: 'category_type', width: 80},
+            {label: '创建时间', name: 'createTime', index: 'create_time', width: 80, formatter: getMyDateTime},
+            {label: '修改时间', name: 'updateTime', index: 'update_time', width: 80, formatter: getMyDateTime}
         ],
         viewrecords: true,
         height: 385,
@@ -45,7 +41,7 @@ var vm = new Vue({
     data: {
         showList: true,
         title: null,
-        student: {},
+        category: {},
         q: {}
     },
     methods: {
@@ -55,7 +51,7 @@ var vm = new Vue({
         add: function () {
             vm.showList = false;
             vm.title = "新增";
-            vm.student = {};
+            vm.category = {};
         },
         update: function (event) {
             var id = getSelectedRow();
@@ -67,60 +63,14 @@ var vm = new Vue({
 
             vm.getInfo(id)
         },
-        forbidden: function () {
-            var id = getSelectedRow();
-            if (id == null) {
-                return;
-            }
-            confirm('确定要禁用所选的用户？', function () {
-                console.log("id = " + id)
-                $.ajax({
-                    type: "POST",
-                    url: baseURL + "user/forbidden",
-                    data: {
-                        "id": id
-                    } ,
-                    success: function (r) {
-                        if (r.code == 0) {
-                            alert('操作成功', function (index) {
-                                $("#jqGrid").trigger("reloadGrid");
-                            });
-                        } else {
-                            alert(r.msg);
-                        }
-                    }
-                });
-            });
-        },
-        recover: function () {
-            var id = getSelectedRow();
-
-            confirm('确定要恢复所选的用户？', function () {
-                $.ajax({
-                    type: "POST",
-                    url: baseURL + "user/recover",
-                    data:  {
-                        "id": id
-                    },
-                    success: function (r) {
-                        if (r.code == 0) {
-                            alert('操作成功', function (index) {
-                                $("#jqGrid").trigger("reloadGrid");
-                            });
-                        } else {
-                            alert(r.msg);
-                        }
-                    }
-                });
-            });
-        },
         saveOrUpdate: function (event) {
-            var url = vm.student.id == null ? "user/save" : "user/update";
+            console.log(vm.category.categoryId);
+            var url = vm.category.categoryId == null ? "category/save" : "category/update";
             $.ajax({
                 type: "POST",
                 url: baseURL + url,
                 contentType: "application/json",
-                data: JSON.stringify(vm.student),
+                data: JSON.stringify(vm.category),
                 success: function (r) {
                     if (r.code === 0) {
                         alert('操作成功', function (index) {
@@ -142,7 +92,7 @@ var vm = new Vue({
             confirm('确定要删除选中的记录？', function () {
                 $.ajax({
                     type: "POST",
-                    url: baseURL + "user/delete",
+                    url: baseURL + "category/delete",
                     contentType: "application/json",
                     data: JSON.stringify(ids),
                     success: function (r) {
@@ -159,8 +109,8 @@ var vm = new Vue({
         },
         getInfo: function (id) {
             console.log(id);
-            $.get(baseURL + "user/info/" + id, function (r) {
-                vm.student = r.student;
+            $.get(baseURL + "category/info/" + id, function (r) {
+                vm.category = r.category;
             });
         },
         reload: function (event) {
@@ -174,21 +124,3 @@ var vm = new Vue({
         }
     }
 });
-
-function showabled(abled) {
-    if (abled == 0)
-        return "<span class='label label-success'>正常</span>";
-    else if (abled == 1)
-        return "<span class='label label-danger'>禁用</span>";
-    // else if (abled == 2)
-    //     return "<span class='label label-warning'></span>";
-}
-
-function showRole(abled) {
-    if (abled == 0)
-        return "<span class='label label-success'>用户</span>";
-    else if (abled == 1)
-        return "<span class='label label-danger'>管理员</span>";
-    // else if (abled == 2)
-    //     return "<span class='label label-warning'></span>";
-}

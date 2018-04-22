@@ -1,17 +1,18 @@
 $(function () {
     $("#jqGrid").jqGrid({
-        url: baseURL + 'user/list',
+        url: baseURL + 'product/list',
         datatype: "json",
         colModel: [
-            {label: 'id', name: 'id', index: 'id', width: 50, key: true},
-            {label: '用户名', name: 'name', index: 'name', width: 80},
-            {label: '邮箱', name: 'email', index: 'email', width: 80},
-            {label: '昵称', name: 'nickName', index: 'nick_name', width: 80},
-            {label: '电话', name: 'phoneNumber', index: 'phone_number', width: 80},
-            {label: '角色', name: 'role', index: 'role', width: 80,formatter:showRole},
+            {label: 'id', name: 'productId', index: 'product_id', width: 50, key: true},
+            {label: '商品名称', name: 'productName', index: 'product_name', width: 80},
+            {label: '商品价格', name: 'productPrice', index: 'product_price', width: 80},
+            {label: '商品库存', name: 'productStock', index: 'product_stock', width: 80},
+            {label: '商品描述', name: 'productDescription', index: 'product_description', width: 80},
+            {label: '商品图片', name: 'productIcon', index: 'product_icon', width: 80},
+            {label: '商品类目', name: 'categoryType', index: 'category_type', width: 80},
+            {label: '创建时间', name: 'createTime', index: 'create_time', width: 80, formatter: getMyDateTime},
             {label: '修改时间', name: 'updateTime', index: 'update_time', width: 80, formatter: getMyDateTime},
-            {label: '注册时间', name: 'createTime', index: 'create_time', width: 80, formatter: getMyDateTime},
-            {label: '账户状态', name: 'status', index: 'status', width: 80, formatter: showabled},
+            {label: '商品状态', name: 'productStatus', index: 'product_status', width: 80, formatter: showabled},
         ],
         viewrecords: true,
         height: 385,
@@ -45,7 +46,7 @@ var vm = new Vue({
     data: {
         showList: true,
         title: null,
-        student: {},
+        product: {},
         q: {}
     },
     methods: {
@@ -55,7 +56,7 @@ var vm = new Vue({
         add: function () {
             vm.showList = false;
             vm.title = "新增";
-            vm.student = {};
+            vm.product = {};
         },
         update: function (event) {
             var id = getSelectedRow();
@@ -76,7 +77,7 @@ var vm = new Vue({
                 console.log("id = " + id)
                 $.ajax({
                     type: "POST",
-                    url: baseURL + "user/forbidden",
+                    url: baseURL + "product/forbidden",
                     data: {
                         "id": id
                     } ,
@@ -98,7 +99,7 @@ var vm = new Vue({
             confirm('确定要恢复所选的用户？', function () {
                 $.ajax({
                     type: "POST",
-                    url: baseURL + "user/recover",
+                    url: baseURL + "product/recover",
                     data:  {
                         "id": id
                     },
@@ -115,12 +116,12 @@ var vm = new Vue({
             });
         },
         saveOrUpdate: function (event) {
-            var url = vm.student.id == null ? "user/save" : "user/update";
+            var url = vm.student.id == null ? "product/save" : "product/update";
             $.ajax({
                 type: "POST",
                 url: baseURL + url,
                 contentType: "application/json",
-                data: JSON.stringify(vm.student),
+                data: JSON.stringify(vm.product),
                 success: function (r) {
                     if (r.code === 0) {
                         alert('操作成功', function (index) {
@@ -142,7 +143,7 @@ var vm = new Vue({
             confirm('确定要删除选中的记录？', function () {
                 $.ajax({
                     type: "POST",
-                    url: baseURL + "user/delete",
+                    url: baseURL + "product/delete",
                     contentType: "application/json",
                     data: JSON.stringify(ids),
                     success: function (r) {
@@ -159,8 +160,8 @@ var vm = new Vue({
         },
         getInfo: function (id) {
             console.log(id);
-            $.get(baseURL + "user/info/" + id, function (r) {
-                vm.student = r.student;
+            $.get(baseURL + "product/info/" + id, function (r) {
+                vm.product = r.product;
             });
         },
         reload: function (event) {

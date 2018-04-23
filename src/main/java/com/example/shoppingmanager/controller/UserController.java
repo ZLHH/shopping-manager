@@ -114,8 +114,6 @@ public class UserController {
 
 	@RequestMapping(value = "/forbidden", method = RequestMethod.POST)
 	public R forbidden(Integer id){
-		System.out.println("id = " + id);
-		System.out.println("StudentController.forbidden");
 		if(userService.forbidden(id)){
 			return R.ok();
 		}else {

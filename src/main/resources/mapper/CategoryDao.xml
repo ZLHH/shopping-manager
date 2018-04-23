@@ -17,6 +17,10 @@
 		select  category_id,category_name,category_type from product_category where category_id = #{categoryId}
 	</select>
 
+	<select id="querycategoryList" resultMap="categoryMap">
+		select * from product_category
+	</select>
+
 
 	<select id="queryList" resultMap="categoryMap">
 		select * from product_category

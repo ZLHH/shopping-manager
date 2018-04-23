@@ -13,7 +13,7 @@ import java.util.Map;
 @Mapper
 public interface ProductDao {
 
-    Product queryObject(Integer id);
+    Product queryObject(String id);
 
     List<Product> queryList(Map<String, Object> map);
 
@@ -23,5 +23,9 @@ public interface ProductDao {
 
     void update(Product product);
 
-    void deleteBatch(Integer[] ids);
+    void deleteBatch(String[] ids);
+
+    Integer forbidden(String id);
+
+    Integer recover(String id);
 }

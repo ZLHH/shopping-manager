@@ -25,6 +25,8 @@ public class CategoryService {
 
     public List<Category> queryList(Map<String, Object> map){return categoryDao.queryList(map);}
 
+    public List<Category> querycategoryList(){return categoryDao.querycategoryList();}
+
     public  int queryTotal(Map<String, Object> map){return categoryDao.queryTotal(map);}
 
     public  void save(Category category){categoryDao.save(category);}

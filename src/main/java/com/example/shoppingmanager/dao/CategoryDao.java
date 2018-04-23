@@ -17,6 +17,8 @@ public interface CategoryDao {
 
     List<Category> queryList(Map<String, Object> map);
 
+    List<Category> querycategoryList();
+
     int queryTotal(Map<String, Object> map);
 
     void save(Category category);

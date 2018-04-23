@@ -19,7 +19,7 @@
 
 
 	<select id="queryObject" resultMap="productMap">
-		select  * from product_info where product_id = #{productId}
+		select  * from product_info where product_id = #{id}
 	</select>
 
 
@@ -54,13 +54,23 @@
 	<insert id="save" parameterType="com.example.shoppingmanager.entity.Product" useGeneratedKeys="true" keyProperty="id">
 		insert into product_info
 		(
-		`category_name`,
+		`product_id`,
+		`product_name`,
+		`product_price`,
+		`product_stock`,
+		`product_description`,
+		`product_icon`,
 		`category_type`,
 		`create_time`
 		)
 		values
 		(
-		#{categoryName},
+		#{productId},
+		#{productName},
+		#{productPrice},
+		#{productStock},
+		#{productDescription},
+		#{productIcon},
 		#{categoryType},
 		#{createTime}
 		)
@@ -70,12 +80,28 @@
     <update id="update" parameterType="com.example.shoppingmanager.entity.Product">
         update product_info
         <set>
-			<if test="categoryName != null">
-				`category_name` = #{categoryName},
+			<if test="productId != null">
+				`product_id` = #{productId},
+			</if>
+			<if test="productName != null">
+				`product_name` = #{productName},
+			</if>
+			<if test="productPrice != null">
+				`product_price` = #{productPrice},
+			</if>
+			<if test="productStock != null">
+				`product_stock` = #{productStock},
+			</if>
+			<if test="productDescription != null">
+				`product_description` = #{productDescription},
+			</if>
+			<if test="productIcon != null">
+				`product_icon` = #{productIcon},
 			</if>
 			<if test="categoryType != null">
 				`category_type` = #{categoryType},
 			</if>
+
 			<if test="updateTime != null">
 				`update_time` = #{updateTime}
 			</if>
@@ -90,6 +116,14 @@
 			#{id}
 		</foreach>
 	</delete>
+
+	<update id="forbidden">
+		update product_info set product_status = 1 where product_id = #{id}
+	</update>
+
+	<update id="recover">
+		update product_info set product_status = 0 where product_id = #{id}
+	</update>
 
 
 </mapper>

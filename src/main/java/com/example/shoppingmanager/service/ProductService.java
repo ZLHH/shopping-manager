@@ -18,7 +18,7 @@ public class ProductService {
     @Autowired
     private ProductDao productDao;
 
-    public Product queryObject(Integer id){
+    public Product queryObject(String id){
         return productDao.queryObject(id);
     }
 
@@ -30,5 +30,13 @@ public class ProductService {
 
     public 	void update(Product product){productDao.update(product);}
 
-    public void deleteBatch(Integer[] ids){productDao.deleteBatch(ids);}
+    public void deleteBatch(String[] ids){productDao.deleteBatch(ids);}
+
+    public boolean forbidden(String id){
+        return productDao.forbidden(id) == 1 ? true : false;
+    }
+
+    public boolean recover(String id){
+        return productDao.recover(id) == 1 ? true : false;
+    }
 }

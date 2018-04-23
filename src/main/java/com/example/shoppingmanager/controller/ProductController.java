@@ -2,6 +2,7 @@ package com.example.shoppingmanager.controller;
 
 import com.example.shoppingmanager.entity.Product;
 import com.example.shoppingmanager.service.ProductService;
+import com.example.shoppingmanager.utils.CommonUtil;
 import com.example.shoppingmanager.utils.PageUtils;
 import com.example.shoppingmanager.utils.Query;
 import com.example.shoppingmanager.utils.R;
@@ -42,7 +43,7 @@ public class ProductController {
      * 信息
      */
     @RequestMapping("/info/{id}")
-    public R info(@PathVariable("id") Integer id){
+    public R info(@PathVariable("id") String id){
         Product product = productService.queryObject(id);
         return R.ok().put("product", product);
     }
@@ -52,6 +53,7 @@ public class ProductController {
      */
     @RequestMapping("/save")
     public R save(@RequestBody Product product){
+        product.setProductId(CommonUtil.getUUID());
         product.setCreateTime(LocalDateTime.now());
         productService.save(product);
         return R.ok();
@@ -71,8 +73,26 @@ public class ProductController {
      * 删除
      */
     @RequestMapping("/delete")
-    public R delete(@RequestBody Integer[] ids){
+    public R delete(@RequestBody String[] ids){
         productService.deleteBatch(ids);
         return R.ok();
+    }
+
+    @RequestMapping(value = "/forbidden", method = RequestMethod.POST)
+    public R forbidden(String id){
+        if(productService.forbidden(id)){
+            return R.ok();
+        }else {
+            return R.error();
+        }
+    }
+
+    @RequestMapping("/recover")
+    public R recover( String id){
+        if(productService.recover(id)){
+            return R.ok();
+        }else {
+            return R.error();
+        }
     }
 }

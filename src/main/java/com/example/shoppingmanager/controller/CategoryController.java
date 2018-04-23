@@ -74,4 +74,16 @@ public class CategoryController {
         categoryService.deleteBatch(ids);
         return R.ok();
     }
+
+    /**
+     * 删除
+     */
+    @RequestMapping("/queryAllCategory")
+    public R getCategory(){
+        List<Category> categoryList = categoryService.querycategoryList();
+        if(categoryList!=null&&!categoryList.isEmpty()){
+            return R.ok().put("list",categoryList);
+        }
+        return R.error("没有类目数据！！！");
+    }
 }

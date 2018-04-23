@@ -30,7 +30,7 @@
                        @keyup.enter="query"/>
             </div>
             <div class="form-group col-md-1">
-                <input id="email" type="text" placeholder="类目编号" class="form-control" v-model="q.categoryType"
+                <input id="email" type="text" placeholder="商品编号" class="form-control" v-model="q.categoryType"
                        @keyup.enter="query"/>
             </div>
             <a class="btn btn-default" @click="query">查询</a>
@@ -51,7 +51,7 @@
             <div class="form-group">
                 <div class="col-sm-2 control-label">商品名称</div>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" v-model="product.producName" placeholder="商品名称"/>
+                    <input type="text" class="form-control" v-model="product.productName" placeholder="商品名称"/>
                 </div>
             </div>
             <div class="form-group">
@@ -69,19 +69,22 @@
             <div class="form-group">
                 <div class="col-sm-2 control-label">商品描述</div>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" v-model="product.productescription" placeholder="库存"/>
+                    <input type="text" class="form-control" v-model="product.productDescription" placeholder="商品描述"/>
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-sm-2 control-label">商品图片</div>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" v-model="product.productcon" placeholder="商品图片"/>
+                    <input type="text" class="form-control" v-model="product.productIcon" placeholder="商品图片"/>
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-sm-2 control-label">商品类目</div>
+                <div class="col-sm-2 control-label"><span style="color: red"> * </span>商品类目</div>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" v-model="product.categoryype" placeholder="商品类目"/>
+                    <select v-model="product.categoryType"  class="form-control">
+                        <option disabled value="" >选择商品类目</option>
+                        <option v-for="el in categoryList" :value="el.categoryType">{{el.categoryName}}</option>
+                    </select>
                 </div>
             </div>
 

@@ -1,3 +1,6 @@
+window.onload=function(){
+    vm.getcategoryList();
+}
 $(function () {
     $("#jqGrid").jqGrid({
         url: baseURL + 'product/list',
@@ -47,9 +50,23 @@ var vm = new Vue({
         showList: true,
         title: null,
         product: {},
-        q: {}
+        q: {},
+        categoryList:[]
     },
     methods: {
+        getcategoryList:function () {
+            $.ajax({
+                url: 'category/queryAllCategory',
+                type:'get',
+                dataType:'JSON',
+                data:{},
+                success:function(res)
+                {
+                    vm.categoryList=res.list
+                }
+            });
+            console.log(vm.categoryList);
+        },
         query: function () {
             vm.reload();
         },
@@ -73,7 +90,7 @@ var vm = new Vue({
             if (id == null) {
                 return;
             }
-            confirm('确定要禁用所选的用户？', function () {
+            confirm('确定要下架所选的商品？', function () {
                 console.log("id = " + id)
                 $.ajax({
                     type: "POST",
@@ -96,7 +113,7 @@ var vm = new Vue({
         recover: function () {
             var id = getSelectedRow();
 
-            confirm('确定要恢复所选的用户？', function () {
+            confirm('确定要恢复所选的商品？', function () {
                 $.ajax({
                     type: "POST",
                     url: baseURL + "product/recover",
@@ -116,7 +133,7 @@ var vm = new Vue({
             });
         },
         saveOrUpdate: function (event) {
-            var url = vm.student.id == null ? "product/save" : "product/update";
+            var url = vm.product.productId == null ? "product/save" : "product/update";
             $.ajax({
                 type: "POST",
                 url: baseURL + url,
@@ -167,7 +184,6 @@ var vm = new Vue({
         reload: function (event) {
             vm.showList = true;
             var page = $("#jqGrid").jqGrid('getGridParam', 'page');
-            console.log(vm.q);
             $("#jqGrid").jqGrid('setGridParam', {
                 page: page,
                 postData: vm.q
@@ -180,22 +196,11 @@ function showabled(abled) {
     if (abled == 0)
         return "<span class='label label-success'>正常</span>";
     else if (abled == 1)
-        return "<span class='label label-danger'>禁用</span>";
-    // else if (abled == 2)
-    //     return "<span class='label label-warning'></span>";
+        return "<span class='label label-danger'>已下架</span>";
 }
 
-function showRole(abled) {
-    if (abled == 0)
-        return "<span class='label label-success'>用户</span>";
-    else if (abled == 1)
-        return "<span class='label label-danger'>管理员</span>";
-    // else if (abled == 2)
-    //     return "<span class='label label-warning'></span>";
-}
 
 function showTime(cellvalue, options, rowObject) {
-    console.log(cellvalue);
     if (cellvalue!=null){
         var oYear = cellvalue.year,
             oMonth = cellvalue.monthValue,

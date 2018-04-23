@@ -194,7 +194,6 @@ function showRole(abled) {
 }
 
 function showTime(cellvalue, options, rowObject) {
-    console.log(cellvalue);
     if (cellvalue!=null){
         var oYear = cellvalue.year,
             oMonth = cellvalue.monthValue,

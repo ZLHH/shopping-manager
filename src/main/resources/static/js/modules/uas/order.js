@@ -3,16 +3,16 @@ $(function () {
         url: baseURL + 'order/list',
         datatype: "json",
         colModel: [
-            {label: 'id', name: 'orderId', index: 'order_id', width: 50, key: true},
-            {label: '买家名字', name: 'name', index: 'name', width: 80},
-            {label: '买家电话', name: 'email', index: 'email', width: 80},
-            {label: '买家地址', name: 'nickName', index: 'nick_name', width: 80},
-            {label: '买家微信openid', name: 'phoneNumber', index: 'phone_number', width: 80},
-            {label: '订单总金额', name: 'role', index: 'role', width: 80,formatter:showRole},
-            {label: '订单状态', name: 'role', index: 'role', width: 80,formatter:showRole},
-            {label: '支付状态', name: 'role', index: 'pay_status', width: 80,formatter:showRole},
-            {label: '创建时间', name: 'createTime', index: 'create_time', width: 80, formatter: getMyDateTime},
-            {label: '修改时间', name: 'updateTime', index: 'update_time', width: 80, formatter: getMyDateTime}
+            {label: 'id', name: 'orderId', index: 'order_id', width: 80, key: true},
+            {label: '买家名字', name: 'buyerName', index: 'buyer_name', width: 50},
+            {label: '买家电话', name: 'buyerPhone', index: 'buyer_phone', width: 60},
+            {label: '买家地址', name: 'buyerAddress', index: 'buyer_address', width: 80},
+            {label: '买家微信openid', name: 'buyerOpenid', index: 'buyer_openid', width: 80},
+            {label: '订单总金额', name: 'orderAmount', index: 'order_amount', width: 40},
+            {label: '订单状态', name: 'orderStatus', index: 'order_status', width: 30,formatter:showOrder},
+            {label: '支付状态', name: 'payStatus', index: 'pay_status', width: 30,formatter:showPay},
+            {label: '创建时间', name: 'createTime', index: 'create_time', width: 80, formatter: showTime},
+            {label: '修改时间', name: 'updateTime', index: 'update_time', width: 80, formatter: showTime}
         ],
         viewrecords: true,
         height: 385,
@@ -53,11 +53,6 @@ var vm = new Vue({
         query: function () {
             vm.reload();
         },
-        add: function () {
-            vm.showList = false;
-            vm.title = "新增";
-            vm.order = {};
-        },
         update: function (event) {
             var id = getSelectedRow();
             if (id == null) {
@@ -73,11 +68,10 @@ var vm = new Vue({
             if (id == null) {
                 return;
             }
-            confirm('确定要禁用所选的用户？', function () {
-                console.log("id = " + id)
+            confirm('确定要完成所选的订单？', function () {
                 $.ajax({
                     type: "POST",
-                    url: baseURL + "user/forbidden",
+                    url: baseURL + "order/forbidden",
                     data: {
                         "id": id
                     } ,
@@ -93,30 +87,9 @@ var vm = new Vue({
                 });
             });
         },
-        recover: function () {
-            var id = getSelectedRow();
 
-            confirm('确定要恢复所选的用户？', function () {
-                $.ajax({
-                    type: "POST",
-                    url: baseURL + "order/recover",
-                    data:  {
-                        "id": id
-                    },
-                    success: function (r) {
-                        if (r.code == 0) {
-                            alert('操作成功', function (index) {
-                                $("#jqGrid").trigger("reloadGrid");
-                            });
-                        } else {
-                            alert(r.msg);
-                        }
-                    }
-                });
-            });
-        },
         saveOrUpdate: function (event) {
-            var url = vm.order.id == null ? "order/save" : "order/update";
+            var url = "order/update";
             $.ajax({
                 type: "POST",
                 url: baseURL + url,
@@ -176,20 +149,38 @@ var vm = new Vue({
     }
 });
 
-function showabled(abled) {
+function showOrder(abled) {
     if (abled == 0)
-        return "<span class='label label-success'>正常</span>";
+        return "<span class='label label-success'>新下单</span>";
     else if (abled == 1)
-        return "<span class='label label-danger'>禁用</span>";
-    // else if (abled == 2)
-    //     return "<span class='label label-warning'></span>";
+        return "<span class='label label-warning'>修改订单</span>";
+    else if (abled == 2)
+        return "<span class='label label-danger'>订单完成</span>";
 }
 
-function showRole(abled) {
+function showPay(abled) {
     if (abled == 0)
-        return "<span class='label label-success'>用户</span>";
+        return "<span class='label label-warning'>未支付</span>";
     else if (abled == 1)
-        return "<span class='label label-danger'>管理员</span>";
-    // else if (abled == 2)
-    //     return "<span class='label label-warning'></span>";
+        return "<span class='label label-success'>已支付</span>";
+    else if (abled == 2)
+        return "<span class='label label-info'>退款中</span>";
+    else if (abled == 3)
+        return "<span class='label label-danger'>已退款</span>";
+}
+
+function showTime(cellvalue, options, rowObject) {
+    console.log(cellvalue);
+    if (cellvalue!=null){
+        var oYear = cellvalue.year,
+            oMonth = cellvalue.monthValue,
+            oDay = cellvalue.dayOfMonth,
+            oHour = cellvalue.hour,
+            oMin = cellvalue.minute,
+            oSen = cellvalue.second,
+            oTime = oYear +'-'+ getzf(oMonth) +'-'+ getzf(oDay) +' '+ getzf(oHour) +':'+ getzf(oMin) +':'+getzf(oSen);
+        return oTime;
+    }
+    return "";
+
 }

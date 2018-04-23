@@ -30,10 +30,10 @@ public class ProductController {
         //查询列表数据
         Query query = new Query(params);
 
-        List<Product> coperationList = productService.queryList(query);
+        List<Product> productList = productService.queryList(query);
         int total = productService.queryTotal(query);
 
-        PageUtils pageUtil = new PageUtils(coperationList, total, query.getLimit(), query.getPage());
+        PageUtils pageUtil = new PageUtils(productList, total, query.getLimit(), query.getPage());
 
         return R.ok().put("page", pageUtil);
     }
@@ -43,8 +43,8 @@ public class ProductController {
      */
     @RequestMapping("/info/{id}")
     public R info(@PathVariable("id") Integer id){
-        Product category = productService.queryObject(id);
-        return R.ok().put("category", category);
+        Product product = productService.queryObject(id);
+        return R.ok().put("product", product);
     }
 
     /**

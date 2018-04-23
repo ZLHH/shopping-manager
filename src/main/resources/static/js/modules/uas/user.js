@@ -9,9 +9,9 @@ $(function () {
             {label: '昵称', name: 'nickName', index: 'nick_name', width: 80},
             {label: '电话', name: 'phoneNumber', index: 'phone_number', width: 80},
             {label: '角色', name: 'role', index: 'role', width: 80,formatter:showRole},
-            {label: '修改时间', name: 'updateTime', index: 'update_time', width: 80, formatter: getMyDateTime},
-            {label: '注册时间', name: 'createTime', index: 'create_time', width: 80, formatter: getMyDateTime},
-            {label: '账户状态', name: 'status', index: 'status', width: 80, formatter: showabled},
+            {label: '注册时间', name: 'createTime', index: 'create_time', width: 80, formatter: showTime},
+            {label: '修改时间', name: 'updateTime', index: 'update_time', width: 80, formatter: showTime},
+            {label: '账户状态', name: 'status', index: 'status', width: 80, formatter: showabled}
         ],
         viewrecords: true,
         height: 385,
@@ -191,4 +191,20 @@ function showRole(abled) {
         return "<span class='label label-danger'>管理员</span>";
     // else if (abled == 2)
     //     return "<span class='label label-warning'></span>";
+}
+
+function showTime(cellvalue, options, rowObject) {
+    console.log(cellvalue);
+    if (cellvalue!=null){
+        var oYear = cellvalue.year,
+            oMonth = cellvalue.monthValue,
+            oDay = cellvalue.dayOfMonth,
+            oHour = cellvalue.hour,
+            oMin = cellvalue.minute,
+            oSen = cellvalue.second,
+            oTime = oYear +'-'+ getzf(oMonth) +'-'+ getzf(oDay) +' '+ getzf(oHour) +':'+ getzf(oMin) +':'+getzf(oSen);
+        return oTime;
+    }
+    return "";
+
 }

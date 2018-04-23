@@ -1,6 +1,8 @@
 package com.example.shoppingmanager.controller;
 
+import com.example.shoppingmanager.entity.Order;
 import com.example.shoppingmanager.entity.Product;
+import com.example.shoppingmanager.service.OrderService;
 import com.example.shoppingmanager.service.ProductService;
 import com.example.shoppingmanager.utils.PageUtils;
 import com.example.shoppingmanager.utils.Query;
@@ -20,7 +22,7 @@ import java.util.Map;
 public class OrderController {
 
     @Autowired
-    ProductService productService;
+    OrderService orderService;
 
     /**
      * 列表
@@ -30,10 +32,10 @@ public class OrderController {
         //查询列表数据
         Query query = new Query(params);
 
-        List<Product> coperationList = productService.queryList(query);
-        int total = productService.queryTotal(query);
+        List<Order> orderList = orderService.queryList(query);
+        int total = orderService.queryTotal(query);
 
-        PageUtils pageUtil = new PageUtils(coperationList, total, query.getLimit(), query.getPage());
+        PageUtils pageUtil = new PageUtils(orderList, total, query.getLimit(), query.getPage());
 
         return R.ok().put("page", pageUtil);
     }
@@ -42,28 +44,19 @@ public class OrderController {
      * 信息
      */
     @RequestMapping("/info/{id}")
-    public R info(@PathVariable("id") Integer id){
-        Product category = productService.queryObject(id);
-        return R.ok().put("category", category);
+    public R info(@PathVariable("id") String id){
+        Order order = orderService.queryObject(id);
+        return R.ok().put("order", order);
     }
 
-    /**
-     * 保存
-     */
-    @RequestMapping("/save")
-    public R save(@RequestBody Product product){
-        product.setCreateTime(LocalDateTime.now());
-        productService.save(product);
-        return R.ok();
-    }
 
     /**
      * 修改
      */
     @RequestMapping("/update")
-    public R update(@RequestBody Product product){
-        product.setUpdateTime(LocalDateTime.now());
-        productService.update(product);
+    public R update(@RequestBody Order order){
+        order.setUpdateTime(LocalDateTime.now());
+        orderService.update(order);
         return R.ok();
     }
 
@@ -71,8 +64,17 @@ public class OrderController {
      * 删除
      */
     @RequestMapping("/delete")
-    public R delete(@RequestBody Integer[] ids){
-        productService.deleteBatch(ids);
+    public R delete(@RequestBody String[] ids){
+        orderService.deleteBatch(ids);
         return R.ok();
+    }
+
+    @RequestMapping(value = "/forbidden", method = RequestMethod.POST)
+    public R forbidden(String id){
+        if(orderService.forbidden(id)){
+            return R.ok();
+        }else {
+            return R.error();
+        }
     }
 }

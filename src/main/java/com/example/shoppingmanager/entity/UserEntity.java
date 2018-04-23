@@ -1,7 +1,7 @@
 package com.example.shoppingmanager.entity;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 
 /**
@@ -25,9 +25,9 @@ public class UserEntity implements Serializable {
 
 	private String password;
 
-	private Date updateTime;
+	private LocalDateTime updateTime;
 
-	private Date createTime;
+	private LocalDateTime createTime;
 
 	private Integer status;
 
@@ -81,19 +81,19 @@ public class UserEntity implements Serializable {
 		this.password = password;
 	}
 
-	public Date getUpdateTime() {
+	public LocalDateTime getUpdateTime() {
 		return updateTime;
 	}
 
-	public void setUpdateTime(Date updateTime) {
+	public void setUpdateTime(LocalDateTime updateTime) {
 		this.updateTime = updateTime;
 	}
 
-	public Date getCreateTime() {
+	public LocalDateTime getCreateTime() {
 		return createTime;
 	}
 
-	public void setCreateTime(Date createTime) {
+	public void setCreateTime(LocalDateTime createTime) {
 		this.createTime = createTime;
 	}
 

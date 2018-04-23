@@ -107,7 +107,7 @@ public class AdminController {
             session.setAttribute("admin", admin);
             Date nowDate = new Date();
             admin.setLastIp(ip);
-            admin.setLastTime(nowDate);
+            admin.setLastTime(LocalDateTime.now());
             adminService.update(admin);
             return R.ok();
         } else {

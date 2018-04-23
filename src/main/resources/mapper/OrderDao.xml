@@ -4,33 +4,33 @@
 <mapper namespace="com.example.shoppingmanager.dao.OrderDao">
 
 	<!-- 可根据自己的需求，是否要使用 -->
-    <resultMap type="com.example.shoppingmanager.entity.Product" id="productMap">
-        <result property="productId" column="product_id"/>
-        <result property="productName" column="product_name"/>
-        <result property="productPrice" column="product_price"/>
-		<result property="productStock" column="product_stock"/>
-		<result property="ProductDescription" column="product_description"/>
-		<result property="productIcon" column="product_icon"/>
-		<result property="productStatus" column="product_status"/>
-		<result property="CategoryType" column="category_type"/>
+    <resultMap type="com.example.shoppingmanager.entity.Order" id="productMap">
+        <result property="orderId" column="order_id"/>
+        <result property="buyerName" column="buyer_name"/>
+        <result property="buyerPhone" column="buyer_phone"/>
+		<result property="buyerAddress" column="buyer_address"/>
+		<result property="buyerOpenid" column="buyer_openid"/>
+		<result property="orderAmount" column="order_amount"/>
+		<result property="orderStatus" column="order_status"/>
+		<result property="payStatus" column="pay_status"/>
+		<result property="createTime" column="create_time"/>
         <result property="updateTime" column="update_time"/>
-        <result property="createTime" column="create_time"/>
     </resultMap>
 
 
 	<select id="queryObject" resultMap="productMap">
-		select  * from product_info where product_id = #{productId}
+		select  * from order_master where order_id = #{id}
 	</select>
 
 
 	<select id="queryList" resultMap="productMap">
-		select * from product_info
+		select * from order_master
 		<where>
-			<if test="productName != null and productName.trim() != ''">
-				and product_name = #{productName}
+			<if test="orderId != null and orderId.trim() != ''">
+				and order_id = #{orderId}
 			</if>
-			<if test="categoryType != null and categoryType.trim() != ''">
-				and category_type = #{categoryType}
+			<if test="buyerPhone != null and buyerPhone.trim() != ''">
+				and buyer_phone = #{buyerPhone}
 			</if>
 		</where>
 
@@ -39,7 +39,7 @@
                 order by ${sidx} ${order}
             </when>
 			<otherwise>
-                order by product_id desc
+                order by order_id desc
 			</otherwise>
         </choose>
 		<if test="offset != null and limit != null">
@@ -48,48 +48,45 @@
 	</select>
 	
  	<select id="queryTotal" resultType="int">
-		select count(*) from product_info
+		select count(*) from order_master
 	</select>
 
-	<insert id="save" parameterType="com.example.shoppingmanager.entity.Product" useGeneratedKeys="true" keyProperty="id">
-		insert into product_info
-		(
-		`category_name`,
-		`category_type`,
-		`create_time`
-		)
-		values
-		(
-		#{categoryName},
-		#{categoryType},
-		#{createTime}
-		)
-	</insert>
 
 
     <update id="update" parameterType="com.example.shoppingmanager.entity.Product">
-        update product_info
+        update order_master
         <set>
-			<if test="categoryName != null">
-				`category_name` = #{categoryName},
+			<if test="buyerName != null">
+				`buyer_name` = #{buyerName},
 			</if>
-			<if test="categoryType != null">
-				`category_type` = #{categoryType},
+			<if test="buyerPhone != null">
+				`buyer_phone` = #{buyerPhone},
+			</if>
+			<if test="buyerAddress != null">
+				`buyer_address` = #{buyerAddress},
+			</if>
+			<if test="orderAmount != null">
+				`order_amount` = #{orderAmount},
 			</if>
 			<if test="updateTime != null">
 				`update_time` = #{updateTime}
 			</if>
 		</set>
-        where product_id = #{productId}
+        where order_id = #{orderId}
     </update>
 
 
 	<delete id="deleteBatch">
-		DELETE  from product_info  WHERE  product_id in
+		DELETE  from order_master  WHERE  order_id in
 		<foreach item="id" collection="array" open="(" separator="," close=")">
 			#{id}
 		</foreach>
 	</delete>
+
+	<update id="forbidden">
+		update order_master set order_status = 2 where order_id = #{id}
+	</update>
+
 
 
 </mapper>

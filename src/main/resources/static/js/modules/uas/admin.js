@@ -6,7 +6,7 @@ $(function () {
 			{ label: 'id', name: 'id', index: 'id', width: 50, key: true },
 			{ label: '登录名', name: 'login', index: 'login', width: 80 },
 			{ label: '密码', name: 'password', index: 'password', width: 80 },
-			{ label: '上次登录时间', name: 'lastTime', index: 'last_time', width: 80 ,formatter:getMyDateTime},
+			{ label: '上次登录时间', name: 'lastTime', index: 'last_time', width: 80 ,formatter:showTime},
 			{ label: '上次登录ip', name: 'lastIp', index: 'last_ip', width: 80 },
 			{ label: '姓名', name: 'name', index: 'name', width: 80 }
         ],
@@ -119,3 +119,19 @@ var vm = new Vue({
 		}
 	}
 });
+
+function showTime(cellvalue, options, rowObject) {
+    console.log(cellvalue);
+    if (cellvalue!=null){
+        var oYear = cellvalue.year,
+            oMonth = cellvalue.monthValue,
+            oDay = cellvalue.dayOfMonth,
+            oHour = cellvalue.hour,
+            oMin = cellvalue.minute,
+            oSen = cellvalue.second,
+            oTime = oYear +'-'+ getzf(oMonth) +'-'+ getzf(oDay) +' '+ getzf(oHour) +':'+ getzf(oMin) +':'+getzf(oSen);
+        return oTime;
+    }
+    return "";
+
+}

@@ -13,15 +13,15 @@ import java.util.Map;
 @Mapper
 public interface OrderDao {
 
-    Order queryObject(Integer id);
+    Order queryObject(String id);
 
     List<Order> queryList(Map<String, Object> map);
 
     int queryTotal(Map<String, Object> map);
 
-    void save(Order order);
-
     void update(Order order);
 
-    void deleteBatch(Integer[] ids);
+    void deleteBatch(String[] ids);
+
+    Integer forbidden(String id);
 }

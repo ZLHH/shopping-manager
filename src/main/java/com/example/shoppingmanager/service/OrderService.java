@@ -18,7 +18,7 @@ public class OrderService {
     @Autowired
     private OrderDao orderDao;
 
-    public Order queryObject(Integer id){
+    public Order queryObject(String id){
         return orderDao.queryObject(id);
     }
 
@@ -26,9 +26,11 @@ public class OrderService {
 
     public  int queryTotal(Map<String, Object> map){return orderDao.queryTotal(map);}
 
-    public  void save(Order order){orderDao.save(order);}
-
     public 	void update(Order order){orderDao.update(order);}
 
-    public void deleteBatch(Integer[] ids){orderDao.deleteBatch(ids);}
+    public void deleteBatch(String[] ids){orderDao.deleteBatch(ids);}
+
+    public boolean forbidden(String id){
+        return orderDao.forbidden(id) == 1 ? true : false;
+    }
 }

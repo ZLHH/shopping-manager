@@ -6,8 +6,8 @@ $(function () {
             {label: 'id', name: 'categoryId', index: 'category_id', width: 50, key: true},
             {label: '类目名字', name: 'categoryName', index: 'category_name', width: 80},
             {label: '类目编号', name: 'categoryType', index: 'category_type', width: 80},
-            {label: '创建时间', name: 'createTime', index: 'create_time', width: 80, formatter: getMyDateTime},
-            {label: '修改时间', name: 'updateTime', index: 'update_time', width: 80, formatter: getMyDateTime}
+            {label: '创建时间', name: 'createTime', index: 'create_time', width: 80, formatter: showTime},
+            {label: '修改时间', name: 'updateTime', index: 'update_time', width: 80, formatter: showTime}
         ],
         viewrecords: true,
         height: 385,
@@ -124,3 +124,19 @@ var vm = new Vue({
         }
     }
 });
+
+function showTime(cellvalue, options, rowObject) {
+    console.log(cellvalue);
+    if (cellvalue!=null){
+        var oYear = cellvalue.year,
+            oMonth = cellvalue.monthValue,
+            oDay = cellvalue.dayOfMonth,
+            oHour = cellvalue.hour,
+            oMin = cellvalue.minute,
+            oSen = cellvalue.second,
+            oTime = oYear +'-'+ getzf(oMonth) +'-'+ getzf(oDay) +' '+ getzf(oHour) +':'+ getzf(oMin) +':'+getzf(oSen);
+        return oTime;
+    }
+    return "";
+
+}

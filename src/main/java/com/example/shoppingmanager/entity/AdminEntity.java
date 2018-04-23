@@ -1,6 +1,7 @@
 package com.example.shoppingmanager.entity;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 
@@ -21,7 +22,7 @@ public class AdminEntity implements Serializable {
 	//
 	private String password;
 	//
-	private Date lastTime;
+	private LocalDateTime lastTime;
 	//
 	private String lastIp;
 	//
@@ -66,15 +67,18 @@ public class AdminEntity implements Serializable {
 	/**
 	 * 设置：
 	 */
-	public void setLastTime(Date lastTime) {
-		this.lastTime = lastTime;
+	public static long getSerialVersionUID() {
+		return serialVersionUID;
 	}
-	/**
-	 * 获取：
-	 */
-	public Date getLastTime() {
+
+	public LocalDateTime getLastTime() {
 		return lastTime;
 	}
+
+	public void setLastTime(LocalDateTime lastTime) {
+		this.lastTime = lastTime;
+	}
+
 	/**
 	 * 设置：
 	 */

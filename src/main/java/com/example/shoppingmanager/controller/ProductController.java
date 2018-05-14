@@ -43,7 +43,7 @@ public class ProductController {
      * 信息
      */
     @RequestMapping("/info/{id}")
-    public R info(@PathVariable("id") String id){
+    public R info(@PathVariable("id") Integer id){
         Product product = productService.queryObject(id);
         return R.ok().put("product", product);
     }
@@ -53,7 +53,6 @@ public class ProductController {
      */
     @RequestMapping("/save")
     public R save(@RequestBody Product product){
-        product.setProductId(CommonUtil.getUUID());
         product.setCreateTime(LocalDateTime.now());
         productService.save(product);
         return R.ok();
@@ -62,7 +61,7 @@ public class ProductController {
     /**
      * 修改
      */
-    @RequestMapping("/update")
+    @RequestMapping(value = "/update")
     public R update(@RequestBody Product product){
         product.setUpdateTime(LocalDateTime.now());
         productService.update(product);

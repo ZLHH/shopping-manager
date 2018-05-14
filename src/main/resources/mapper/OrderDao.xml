@@ -19,7 +19,7 @@
 
 
 	<select id="queryObject" resultMap="productMap">
-		select  * from order_master where order_id = #{id}
+		select  buyer_name,buyer_phone,buyer_address,order_amount from order_master where order_id = #{id}
 	</select>
 
 

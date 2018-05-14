@@ -18,7 +18,7 @@ public class ProductService {
     @Autowired
     private ProductDao productDao;
 
-    public Product queryObject(String id){
+    public Product queryObject(Integer id){
         return productDao.queryObject(id);
     }
 

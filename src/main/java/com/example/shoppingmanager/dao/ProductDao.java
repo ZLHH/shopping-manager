@@ -13,7 +13,7 @@ import java.util.Map;
 @Mapper
 public interface ProductDao {
 
-    Product queryObject(String id);
+    Product queryObject(Integer id);
 
     List<Product> queryList(Map<String, Object> map);
 

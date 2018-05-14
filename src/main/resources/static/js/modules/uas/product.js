@@ -134,6 +134,7 @@ var vm = new Vue({
         },
         saveOrUpdate: function (event) {
             var url = vm.product.productId == null ? "product/save" : "product/update";
+            console.log(JSON.stringify(vm.product));
             $.ajax({
                 type: "POST",
                 url: baseURL + url,

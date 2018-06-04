@@ -151,11 +151,13 @@ var vm = new Vue({
 
 function showOrder(abled) {
     if (abled == 0)
-        return "<span class='label label-success'>新下单</span>";
+        return "<span class='label label-info'>新下单</span>";
     else if (abled == 1)
         return "<span class='label label-warning'>修改订单</span>";
     else if (abled == 2)
-        return "<span class='label label-danger'>订单完成</span>";
+        return "<span class='label label-success'>订单完成</span>";
+    else if (abled == 3)
+        return "<span class='label label-danger'>取消订单</span>";
 }
 
 function showPay(abled) {

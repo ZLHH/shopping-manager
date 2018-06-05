@@ -19,7 +19,7 @@
 
 
 	<select id="queryObject" resultMap="productMap">
-		select  product_name,product_price,product_stock,product_description,product_icon,category_type from product_info where product_id = #{id}
+		select  product_id,product_name,product_price,product_stock,product_description,product_icon,category_type from product_info where product_id = #{id}
 	</select>
 
 

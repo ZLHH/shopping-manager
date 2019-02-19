@@ -2393,3 +2393,474 @@ Caused by: java.sql.SQLException: Access denied for user 'root'@'182.106.212.142
 2018:06:05:18:42 [http-nio-8888-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring FrameworkServlet 'dispatcherServlet'
 2018:06:05:18:42 [http-nio-8888-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet- FrameworkServlet 'dispatcherServlet': initialization started
 2018:06:05:18:42 [http-nio-8888-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet- FrameworkServlet 'dispatcherServlet': initialization completed in 39 ms
+2018:09:16:00:00 [main] INFO  com.example.shoppingmanager.ShoppingManagerApplication- Starting ShoppingManagerApplication on Lenovo-PC with PID 6084 (D:\spring\workspace\shopping-manager\target\classes started by lenovo in D:\spring\workspace\shopping-manager)
+2018:09:16:00:00 [main] INFO  com.example.shoppingmanager.ShoppingManagerApplication- No active profile set, falling back to default profiles: default
+2018:09:16:00:00 [main] INFO  org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext- Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@25a65b77: startup date [Sun Sep 16 00:00:39 CST 2018]; root of context hierarchy
+2018:09:16:00:00 [main] INFO  org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer- Tomcat initialized with port(s): 8888 (http)
+2018:09:16:00:00 [main] INFO  org.apache.catalina.core.StandardService- Starting service [Tomcat]
+2018:09:16:00:00 [main] INFO  org.apache.catalina.core.StandardEngine- Starting Servlet Engine: Apache Tomcat/8.5.27
+2018:09:16:00:00 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring embedded WebApplicationContext
+2018:09:16:00:00 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader- Root WebApplicationContext: initialization completed in 8516 ms
+2018:09:16:00:00 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean- Mapping servlet: 'dispatcherServlet' to [/]
+2018:09:16:00:00 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean- Mapping filter: 'metricsFilter' to: [/*]
+2018:09:16:00:00 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean- Mapping filter: 'characterEncodingFilter' to: [/*]
+2018:09:16:00:00 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean- Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018:09:16:00:00 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean- Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018:09:16:00:00 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean- Mapping filter: 'requestContextFilter' to: [/*]
+2018:09:16:00:00 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean- Mapping filter: 'webRequestLoggingFilter' to: [/*]
+2018:09:16:00:00 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean- Mapping filter: 'applicationContextIdFilter' to: [/*]
+2018:09:16:00:00 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- jolokia: No access restrictor found, access to any MBean is allowed
+2018:09:16:00:00 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter- Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@25a65b77: startup date [Sun Sep 16 00:00:39 CST 2018]; root of context hierarchy
+2018:09:16:00:00 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/admin/update]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.AdminController.update(com.example.shoppingmanager.entity.AdminEntity)
+2018:09:16:00:00 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/admin/delete]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.AdminController.delete(java.lang.Integer[])
+2018:09:16:00:00 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/admin/list]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.AdminController.list(java.util.Map<java.lang.String, java.lang.Object>)
+2018:09:16:00:00 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/admin/save]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.AdminController.save(com.example.shoppingmanager.entity.AdminEntity)
+2018:09:16:00:00 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/admin/info/{id}]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.AdminController.info(java.lang.Integer)
+2018:09:16:00:00 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/admin/login]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.AdminController.login(org.apache.catalina.servlet4preview.http.HttpServletRequest,java.lang.String,java.lang.String)
+2018:09:16:00:00 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/admin/checklogin]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.AdminController.checkLogin(org.apache.catalina.servlet4preview.http.HttpServletRequest)
+2018:09:16:00:00 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/admin/logout]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.AdminController.logout(org.apache.catalina.servlet4preview.http.HttpServletRequest)
+2018:09:16:00:00 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/category/update]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.CategoryController.update(com.example.shoppingmanager.entity.Category)
+2018:09:16:00:00 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/category/delete]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.CategoryController.delete(java.lang.Integer[])
+2018:09:16:00:00 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/category/list]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.CategoryController.list(java.util.Map<java.lang.String, java.lang.Object>)
+2018:09:16:00:00 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/category/save]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.CategoryController.save(com.example.shoppingmanager.entity.Category)
+2018:09:16:00:00 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/category/info/{id}]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.CategoryController.info(java.lang.Integer)
+2018:09:16:00:00 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/category/queryAllCategory]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.CategoryController.getCategory()
+2018:09:16:00:00 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/coperation/update]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.CoperationController.update(com.example.shoppingmanager.entity.Coperation)
+2018:09:16:00:00 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/coperation/delete]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.CoperationController.delete(java.lang.Integer[])
+2018:09:16:00:00 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/coperation/list]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.CoperationController.list(java.util.Map<java.lang.String, java.lang.Object>)
+2018:09:16:00:00 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/coperation/save]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.CoperationController.save(com.example.shoppingmanager.entity.Coperation)
+2018:09:16:00:00 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/coperation/info/{id}]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.CoperationController.info(java.lang.Integer)
+2018:09:16:00:00 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/coperation/changeStatus]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.CoperationController.changeStatus(java.lang.Integer)
+2018:09:16:00:00 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/info/update]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.InformationController.update(com.example.shoppingmanager.entity.Information)
+2018:09:16:00:00 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/info/delete]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.InformationController.delete(java.lang.Integer[])
+2018:09:16:00:00 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/info/list]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.InformationController.list(java.util.Map<java.lang.String, java.lang.Object>)
+2018:09:16:00:00 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/info/save]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.InformationController.save(com.example.shoppingmanager.entity.Information)
+2018:09:16:00:00 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/info/info/{id}]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.InformationController.info(java.lang.Integer)
+2018:09:16:00:00 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/order/update]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.OrderController.update(com.example.shoppingmanager.entity.Order)
+2018:09:16:00:00 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/order/delete]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.OrderController.delete(java.lang.String[])
+2018:09:16:00:00 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/order/list]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.OrderController.list(java.util.Map<java.lang.String, java.lang.Object>)
+2018:09:16:00:00 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/order/info/{id}]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.OrderController.info(java.lang.String)
+2018:09:16:00:00 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/order/forbidden],methods=[POST]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.OrderController.forbidden(java.lang.String)
+2018:09:16:00:00 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/product/update]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.ProductController.update(com.example.shoppingmanager.entity.Product)
+2018:09:16:00:00 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/product/delete]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.ProductController.delete(java.lang.String[])
+2018:09:16:00:00 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/product/list]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.ProductController.list(java.util.Map<java.lang.String, java.lang.Object>)
+2018:09:16:00:00 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/product/save]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.ProductController.save(com.example.shoppingmanager.entity.Product)
+2018:09:16:00:00 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/product/info/{id}]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.ProductController.info(java.lang.Integer)
+2018:09:16:00:00 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/product/recover]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.ProductController.recover(java.lang.String)
+2018:09:16:00:00 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/product/forbidden],methods=[POST]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.ProductController.forbidden(java.lang.String)
+2018:09:16:00:00 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/user/update]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.UserController.update(com.example.shoppingmanager.entity.UserEntity)
+2018:09:16:00:00 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/user/delete]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.UserController.delete(java.lang.Integer[])
+2018:09:16:00:00 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/user/list]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.UserController.list(java.util.Map<java.lang.String, java.lang.Object>)
+2018:09:16:00:00 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/user/save]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.UserController.save(com.example.shoppingmanager.entity.UserEntity)
+2018:09:16:00:00 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/user/info/{id}]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.UserController.info(java.lang.Integer)
+2018:09:16:00:00 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/user/recover]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.UserController.recover(java.lang.Integer)
+2018:09:16:00:00 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/user/forbidden],methods=[POST]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.UserController.forbidden(java.lang.Integer)
+2018:09:16:00:00 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018:09:16:00:00 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018:09:16:00:00 [main] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping- Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018:09:16:00:00 [main] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping- Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018:09:16:00:00 [main] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping- Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018:09:16:00:00 [main] INFO  org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WelcomePageHandlerMapping- Adding welcome page: class path resource [views/index.html]
+2018:09:16:00:00 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/env/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EnvironmentMvcEndpoint.value(java.lang.String)
+2018:09:16:00:00 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/env || /env.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018:09:16:00:00 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/beans || /beans.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018:09:16:00:00 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/dump || /dump.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018:09:16:00:00 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/heapdump || /heapdump.json],methods=[GET],produces=[application/octet-stream]}" onto public void org.springframework.boot.actuate.endpoint.mvc.HeapdumpMvcEndpoint.invoke(boolean,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException,javax.servlet.ServletException
+2018:09:16:00:00 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/autoconfig || /autoconfig.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018:09:16:00:00 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/mappings || /mappings.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018:09:16:00:00 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/loggers/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.LoggersMvcEndpoint.get(java.lang.String)
+2018:09:16:00:00 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/loggers/{name:.*}],methods=[POST],consumes=[application/vnd.spring-boot.actuator.v1+json || application/json],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.LoggersMvcEndpoint.set(java.lang.String,java.util.Map<java.lang.String, java.lang.String>)
+2018:09:16:00:00 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/loggers || /loggers.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018:09:16:00:00 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/auditevents || /auditevents.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public org.springframework.http.ResponseEntity<?> org.springframework.boot.actuate.endpoint.mvc.AuditEventsMvcEndpoint.findByPrincipalAndAfterAndType(java.lang.String,java.util.Date,java.lang.String)
+2018:09:16:00:00 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/trace || /trace.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018:09:16:00:00 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/info || /info.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018:09:16:00:00 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/logfile || /logfile.json],methods=[GET || HEAD]}" onto public void org.springframework.boot.actuate.endpoint.mvc.LogFileMvcEndpoint.invoke(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws javax.servlet.ServletException,java.io.IOException
+2018:09:16:00:00 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/jolokia/**]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.actuate.endpoint.mvc.JolokiaMvcEndpoint.handle(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+2018:09:16:00:00 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/configprops || /configprops.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018:09:16:00:00 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/health || /health.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.HealthMvcEndpoint.invoke(javax.servlet.http.HttpServletRequest,java.security.Principal)
+2018:09:16:00:00 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/metrics/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.MetricsMvcEndpoint.value(java.lang.String)
+2018:09:16:00:00 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/metrics || /metrics.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018:09:16:00:00 [main] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter- Registering beans for JMX exposure on startup
+2018:09:16:00:00 [main] INFO  org.springframework.context.support.DefaultLifecycleProcessor- Starting beans in phase 0
+2018:09:16:00:00 [main] INFO  org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer- Tomcat started on port(s): 8888 (http)
+2018:09:16:00:00 [main] INFO  com.example.shoppingmanager.ShoppingManagerApplication- Started ShoppingManagerApplication in 16.453 seconds (JVM running for 24.467)
+2018:09:16:00:01 [RMI TCP Connection(4)-127.0.0.1] ERROR org.apache.tomcat.jdbc.pool.ConnectionPool- Unable to create initial connections of pool.
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:990)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:341)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2186)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2219)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2014)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:776)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:386)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:330)
+	at org.apache.tomcat.jdbc.pool.PooledConnection.connectUsingDriver(PooledConnection.java:310)
+	at org.apache.tomcat.jdbc.pool.PooledConnection.connect(PooledConnection.java:203)
+	at org.apache.tomcat.jdbc.pool.ConnectionPool.createConnection(ConnectionPool.java:735)
+	at org.apache.tomcat.jdbc.pool.ConnectionPool.borrowConnection(ConnectionPool.java:667)
+	at org.apache.tomcat.jdbc.pool.ConnectionPool.init(ConnectionPool.java:482)
+	at org.apache.tomcat.jdbc.pool.ConnectionPool.<init>(ConnectionPool.java:154)
+	at org.apache.tomcat.jdbc.pool.DataSourceProxy.pCreatePool(DataSourceProxy.java:118)
+	at org.apache.tomcat.jdbc.pool.DataSourceProxy.createPool(DataSourceProxy.java:107)
+	at org.apache.tomcat.jdbc.pool.DataSourceProxy.getConnection(DataSourceProxy.java:131)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:111)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:77)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:342)
+	at org.springframework.boot.actuate.health.DataSourceHealthIndicator.getProduct(DataSourceHealthIndicator.java:123)
+	at org.springframework.boot.actuate.health.DataSourceHealthIndicator.doDataSourceHealthCheck(DataSourceHealthIndicator.java:105)
+	at org.springframework.boot.actuate.health.DataSourceHealthIndicator.doHealthCheck(DataSourceHealthIndicator.java:100)
+	at org.springframework.boot.actuate.health.AbstractHealthIndicator.health(AbstractHealthIndicator.java:43)
+	at org.springframework.boot.actuate.health.CompositeHealthIndicator.health(CompositeHealthIndicator.java:68)
+	at org.springframework.boot.actuate.endpoint.HealthEndpoint.invoke(HealthEndpoint.java:85)
+	at org.springframework.boot.actuate.endpoint.HealthEndpoint.invoke(HealthEndpoint.java:35)
+	at org.springframework.boot.actuate.endpoint.jmx.DataEndpointMBean.getData(DataEndpointMBean.java:46)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at sun.reflect.misc.Trampoline.invoke(MethodUtil.java:71)
+	at sun.reflect.GeneratedMethodAccessor71.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at sun.reflect.misc.MethodUtil.invoke(MethodUtil.java:275)
+	at javax.management.modelmbean.RequiredModelMBean$4.run(RequiredModelMBean.java:1252)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:80)
+	at javax.management.modelmbean.RequiredModelMBean.invokeMethod(RequiredModelMBean.java:1246)
+	at javax.management.modelmbean.RequiredModelMBean.invoke(RequiredModelMBean.java:1085)
+	at org.springframework.jmx.export.SpringModelMBean.invoke(SpringModelMBean.java:90)
+	at javax.management.modelmbean.RequiredModelMBean.getAttribute(RequiredModelMBean.java:1562)
+	at org.springframework.jmx.export.SpringModelMBean.getAttribute(SpringModelMBean.java:109)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.getAttribute(DefaultMBeanServerInterceptor.java:647)
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.getAttribute(JmxMBeanServer.java:678)
+	at javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1445)
+	at javax.management.remote.rmi.RMIConnectionImpl.access$300(RMIConnectionImpl.java:76)
+	at javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1309)
+	at javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1401)
+	at javax.management.remote.rmi.RMIConnectionImpl.getAttribute(RMIConnectionImpl.java:639)
+	at sun.reflect.GeneratedMethodAccessor26.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:357)
+	at sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:568)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:826)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:683)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:682)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.ConnectException: Connection timed out: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:211)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:300)
+	... 72 common frames omitted
+2018:09:16:00:01 [RMI TCP Connection(4)-127.0.0.1] WARN  org.springframework.boot.actuate.health.DataSourceHealthIndicator- Health check failed
+org.springframework.jdbc.CannotGetJdbcConnectionException: Could not get JDBC Connection; nested exception is com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:80)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:342)
+	at org.springframework.boot.actuate.health.DataSourceHealthIndicator.getProduct(DataSourceHealthIndicator.java:123)
+	at org.springframework.boot.actuate.health.DataSourceHealthIndicator.doDataSourceHealthCheck(DataSourceHealthIndicator.java:105)
+	at org.springframework.boot.actuate.health.DataSourceHealthIndicator.doHealthCheck(DataSourceHealthIndicator.java:100)
+	at org.springframework.boot.actuate.health.AbstractHealthIndicator.health(AbstractHealthIndicator.java:43)
+	at org.springframework.boot.actuate.health.CompositeHealthIndicator.health(CompositeHealthIndicator.java:68)
+	at org.springframework.boot.actuate.endpoint.HealthEndpoint.invoke(HealthEndpoint.java:85)
+	at org.springframework.boot.actuate.endpoint.HealthEndpoint.invoke(HealthEndpoint.java:35)
+	at org.springframework.boot.actuate.endpoint.jmx.DataEndpointMBean.getData(DataEndpointMBean.java:46)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at sun.reflect.misc.Trampoline.invoke(MethodUtil.java:71)
+	at sun.reflect.GeneratedMethodAccessor71.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at sun.reflect.misc.MethodUtil.invoke(MethodUtil.java:275)
+	at javax.management.modelmbean.RequiredModelMBean$4.run(RequiredModelMBean.java:1252)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:80)
+	at javax.management.modelmbean.RequiredModelMBean.invokeMethod(RequiredModelMBean.java:1246)
+	at javax.management.modelmbean.RequiredModelMBean.invoke(RequiredModelMBean.java:1085)
+	at org.springframework.jmx.export.SpringModelMBean.invoke(SpringModelMBean.java:90)
+	at javax.management.modelmbean.RequiredModelMBean.getAttribute(RequiredModelMBean.java:1562)
+	at org.springframework.jmx.export.SpringModelMBean.getAttribute(SpringModelMBean.java:109)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.getAttribute(DefaultMBeanServerInterceptor.java:647)
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.getAttribute(JmxMBeanServer.java:678)
+	at javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1445)
+	at javax.management.remote.rmi.RMIConnectionImpl.access$300(RMIConnectionImpl.java:76)
+	at javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1309)
+	at javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1401)
+	at javax.management.remote.rmi.RMIConnectionImpl.getAttribute(RMIConnectionImpl.java:639)
+	at sun.reflect.GeneratedMethodAccessor26.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:357)
+	at sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:568)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:826)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:683)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:682)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:990)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:341)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2186)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2219)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2014)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:776)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:386)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:330)
+	at org.apache.tomcat.jdbc.pool.PooledConnection.connectUsingDriver(PooledConnection.java:310)
+	at org.apache.tomcat.jdbc.pool.PooledConnection.connect(PooledConnection.java:203)
+	at org.apache.tomcat.jdbc.pool.ConnectionPool.createConnection(ConnectionPool.java:735)
+	at org.apache.tomcat.jdbc.pool.ConnectionPool.borrowConnection(ConnectionPool.java:667)
+	at org.apache.tomcat.jdbc.pool.ConnectionPool.init(ConnectionPool.java:482)
+	at org.apache.tomcat.jdbc.pool.ConnectionPool.<init>(ConnectionPool.java:154)
+	at org.apache.tomcat.jdbc.pool.DataSourceProxy.pCreatePool(DataSourceProxy.java:118)
+	at org.apache.tomcat.jdbc.pool.DataSourceProxy.createPool(DataSourceProxy.java:107)
+	at org.apache.tomcat.jdbc.pool.DataSourceProxy.getConnection(DataSourceProxy.java:131)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:111)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:77)
+	... 49 common frames omitted
+Caused by: java.net.ConnectException: Connection timed out: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:211)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:300)
+	... 72 common frames omitted
+2018:09:16:00:02 [main] INFO  com.example.shoppingmanager.ShoppingManagerApplication- Starting ShoppingManagerApplication on Lenovo-PC with PID 3408 (D:\spring\workspace\shopping-manager\target\classes started by lenovo in D:\spring\workspace\shopping-manager)
+2018:09:16:00:02 [main] INFO  com.example.shoppingmanager.ShoppingManagerApplication- No active profile set, falling back to default profiles: default
+2018:09:16:00:02 [main] INFO  org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext- Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2ed0fbae: startup date [Sun Sep 16 00:02:28 CST 2018]; root of context hierarchy
+2018:09:16:00:02 [main] INFO  org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer- Tomcat initialized with port(s): 8888 (http)
+2018:09:16:00:02 [main] INFO  org.apache.catalina.core.StandardService- Starting service [Tomcat]
+2018:09:16:00:02 [main] INFO  org.apache.catalina.core.StandardEngine- Starting Servlet Engine: Apache Tomcat/8.5.27
+2018:09:16:00:02 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring embedded WebApplicationContext
+2018:09:16:00:02 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader- Root WebApplicationContext: initialization completed in 2218 ms
+2018:09:16:00:02 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean- Mapping servlet: 'dispatcherServlet' to [/]
+2018:09:16:00:02 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean- Mapping filter: 'metricsFilter' to: [/*]
+2018:09:16:00:02 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean- Mapping filter: 'characterEncodingFilter' to: [/*]
+2018:09:16:00:02 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean- Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018:09:16:00:02 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean- Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018:09:16:00:02 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean- Mapping filter: 'requestContextFilter' to: [/*]
+2018:09:16:00:02 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean- Mapping filter: 'webRequestLoggingFilter' to: [/*]
+2018:09:16:00:02 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean- Mapping filter: 'applicationContextIdFilter' to: [/*]
+2018:09:16:00:02 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- jolokia: No access restrictor found, access to any MBean is allowed
+2018:09:16:00:02 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter- Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2ed0fbae: startup date [Sun Sep 16 00:02:28 CST 2018]; root of context hierarchy
+2018:09:16:00:02 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/admin/update]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.AdminController.update(com.example.shoppingmanager.entity.AdminEntity)
+2018:09:16:00:02 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/admin/delete]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.AdminController.delete(java.lang.Integer[])
+2018:09:16:00:02 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/admin/list]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.AdminController.list(java.util.Map<java.lang.String, java.lang.Object>)
+2018:09:16:00:02 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/admin/save]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.AdminController.save(com.example.shoppingmanager.entity.AdminEntity)
+2018:09:16:00:02 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/admin/info/{id}]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.AdminController.info(java.lang.Integer)
+2018:09:16:00:02 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/admin/checklogin]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.AdminController.checkLogin(org.apache.catalina.servlet4preview.http.HttpServletRequest)
+2018:09:16:00:02 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/admin/login]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.AdminController.login(org.apache.catalina.servlet4preview.http.HttpServletRequest,java.lang.String,java.lang.String)
+2018:09:16:00:02 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/admin/logout]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.AdminController.logout(org.apache.catalina.servlet4preview.http.HttpServletRequest)
+2018:09:16:00:02 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/category/update]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.CategoryController.update(com.example.shoppingmanager.entity.Category)
+2018:09:16:00:02 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/category/delete]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.CategoryController.delete(java.lang.Integer[])
+2018:09:16:00:02 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/category/list]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.CategoryController.list(java.util.Map<java.lang.String, java.lang.Object>)
+2018:09:16:00:02 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/category/save]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.CategoryController.save(com.example.shoppingmanager.entity.Category)
+2018:09:16:00:02 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/category/info/{id}]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.CategoryController.info(java.lang.Integer)
+2018:09:16:00:02 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/category/queryAllCategory]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.CategoryController.getCategory()
+2018:09:16:00:02 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/coperation/update]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.CoperationController.update(com.example.shoppingmanager.entity.Coperation)
+2018:09:16:00:02 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/coperation/delete]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.CoperationController.delete(java.lang.Integer[])
+2018:09:16:00:02 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/coperation/list]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.CoperationController.list(java.util.Map<java.lang.String, java.lang.Object>)
+2018:09:16:00:02 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/coperation/save]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.CoperationController.save(com.example.shoppingmanager.entity.Coperation)
+2018:09:16:00:02 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/coperation/info/{id}]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.CoperationController.info(java.lang.Integer)
+2018:09:16:00:02 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/coperation/changeStatus]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.CoperationController.changeStatus(java.lang.Integer)
+2018:09:16:00:02 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/info/update]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.InformationController.update(com.example.shoppingmanager.entity.Information)
+2018:09:16:00:02 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/info/delete]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.InformationController.delete(java.lang.Integer[])
+2018:09:16:00:02 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/info/list]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.InformationController.list(java.util.Map<java.lang.String, java.lang.Object>)
+2018:09:16:00:02 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/info/save]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.InformationController.save(com.example.shoppingmanager.entity.Information)
+2018:09:16:00:02 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/info/info/{id}]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.InformationController.info(java.lang.Integer)
+2018:09:16:00:02 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/order/update]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.OrderController.update(com.example.shoppingmanager.entity.Order)
+2018:09:16:00:02 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/order/delete]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.OrderController.delete(java.lang.String[])
+2018:09:16:00:02 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/order/list]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.OrderController.list(java.util.Map<java.lang.String, java.lang.Object>)
+2018:09:16:00:02 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/order/info/{id}]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.OrderController.info(java.lang.String)
+2018:09:16:00:02 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/order/forbidden],methods=[POST]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.OrderController.forbidden(java.lang.String)
+2018:09:16:00:02 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/product/update]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.ProductController.update(com.example.shoppingmanager.entity.Product)
+2018:09:16:00:02 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/product/delete]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.ProductController.delete(java.lang.String[])
+2018:09:16:00:02 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/product/list]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.ProductController.list(java.util.Map<java.lang.String, java.lang.Object>)
+2018:09:16:00:02 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/product/save]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.ProductController.save(com.example.shoppingmanager.entity.Product)
+2018:09:16:00:02 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/product/info/{id}]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.ProductController.info(java.lang.Integer)
+2018:09:16:00:02 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/product/recover]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.ProductController.recover(java.lang.String)
+2018:09:16:00:02 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/product/forbidden],methods=[POST]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.ProductController.forbidden(java.lang.String)
+2018:09:16:00:02 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/user/update]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.UserController.update(com.example.shoppingmanager.entity.UserEntity)
+2018:09:16:00:02 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/user/delete]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.UserController.delete(java.lang.Integer[])
+2018:09:16:00:02 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/user/list]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.UserController.list(java.util.Map<java.lang.String, java.lang.Object>)
+2018:09:16:00:02 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/user/save]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.UserController.save(com.example.shoppingmanager.entity.UserEntity)
+2018:09:16:00:02 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/user/info/{id}]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.UserController.info(java.lang.Integer)
+2018:09:16:00:02 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/user/recover]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.UserController.recover(java.lang.Integer)
+2018:09:16:00:02 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/user/forbidden],methods=[POST]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.UserController.forbidden(java.lang.Integer)
+2018:09:16:00:02 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018:09:16:00:02 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018:09:16:00:02 [main] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping- Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018:09:16:00:02 [main] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping- Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018:09:16:00:02 [main] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping- Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018:09:16:00:02 [main] INFO  org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WelcomePageHandlerMapping- Adding welcome page: class path resource [views/index.html]
+2018:09:16:00:02 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/mappings || /mappings.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018:09:16:00:02 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/trace || /trace.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018:09:16:00:02 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/dump || /dump.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018:09:16:00:02 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/health || /health.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.HealthMvcEndpoint.invoke(javax.servlet.http.HttpServletRequest,java.security.Principal)
+2018:09:16:00:02 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/metrics/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.MetricsMvcEndpoint.value(java.lang.String)
+2018:09:16:00:02 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/metrics || /metrics.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018:09:16:00:02 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/env/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EnvironmentMvcEndpoint.value(java.lang.String)
+2018:09:16:00:02 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/env || /env.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018:09:16:00:02 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/info || /info.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018:09:16:00:02 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/beans || /beans.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018:09:16:00:02 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/loggers/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.LoggersMvcEndpoint.get(java.lang.String)
+2018:09:16:00:02 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/loggers/{name:.*}],methods=[POST],consumes=[application/vnd.spring-boot.actuator.v1+json || application/json],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.LoggersMvcEndpoint.set(java.lang.String,java.util.Map<java.lang.String, java.lang.String>)
+2018:09:16:00:02 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/loggers || /loggers.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018:09:16:00:02 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/heapdump || /heapdump.json],methods=[GET],produces=[application/octet-stream]}" onto public void org.springframework.boot.actuate.endpoint.mvc.HeapdumpMvcEndpoint.invoke(boolean,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException,javax.servlet.ServletException
+2018:09:16:00:02 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/configprops || /configprops.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018:09:16:00:02 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/logfile || /logfile.json],methods=[GET || HEAD]}" onto public void org.springframework.boot.actuate.endpoint.mvc.LogFileMvcEndpoint.invoke(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws javax.servlet.ServletException,java.io.IOException
+2018:09:16:00:02 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/autoconfig || /autoconfig.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018:09:16:00:02 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/jolokia/**]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.actuate.endpoint.mvc.JolokiaMvcEndpoint.handle(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+2018:09:16:00:02 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/auditevents || /auditevents.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public org.springframework.http.ResponseEntity<?> org.springframework.boot.actuate.endpoint.mvc.AuditEventsMvcEndpoint.findByPrincipalAndAfterAndType(java.lang.String,java.util.Date,java.lang.String)
+2018:09:16:00:02 [main] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter- Registering beans for JMX exposure on startup
+2018:09:16:00:02 [main] INFO  org.springframework.context.support.DefaultLifecycleProcessor- Starting beans in phase 0
+2018:09:16:00:02 [main] INFO  org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer- Tomcat started on port(s): 8888 (http)
+2018:09:16:00:02 [main] INFO  com.example.shoppingmanager.ShoppingManagerApplication- Started ShoppingManagerApplication in 5.797 seconds (JVM running for 7.759)
+2018:09:16:00:03 [http-nio-8888-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018:09:16:00:03 [http-nio-8888-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet- FrameworkServlet 'dispatcherServlet': initialization started
+2018:09:16:00:03 [http-nio-8888-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet- FrameworkServlet 'dispatcherServlet': initialization completed in 36 ms
+2018:09:16:02:05 [main] INFO  com.example.shoppingmanager.ShoppingManagerApplication- Starting ShoppingManagerApplication on Lenovo-PC with PID 10056 (D:\spring\workspace\shopping-manager\target\classes started by lenovo in D:\spring\workspace\shopping-manager)
+2018:09:16:02:05 [main] INFO  com.example.shoppingmanager.ShoppingManagerApplication- No active profile set, falling back to default profiles: default
+2018:09:16:02:05 [main] INFO  org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext- Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2ed0fbae: startup date [Sun Sep 16 02:05:52 CST 2018]; root of context hierarchy
+2018:09:16:02:05 [main] INFO  org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer- Tomcat initialized with port(s): 8888 (http)
+2018:09:16:02:05 [main] INFO  org.apache.catalina.core.StandardService- Starting service [Tomcat]
+2018:09:16:02:05 [main] INFO  org.apache.catalina.core.StandardEngine- Starting Servlet Engine: Apache Tomcat/8.5.27
+2018:09:16:02:05 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring embedded WebApplicationContext
+2018:09:16:02:05 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader- Root WebApplicationContext: initialization completed in 2477 ms
+2018:09:16:02:05 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean- Mapping servlet: 'dispatcherServlet' to [/]
+2018:09:16:02:05 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean- Mapping filter: 'metricsFilter' to: [/*]
+2018:09:16:02:05 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean- Mapping filter: 'characterEncodingFilter' to: [/*]
+2018:09:16:02:05 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean- Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018:09:16:02:05 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean- Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018:09:16:02:05 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean- Mapping filter: 'requestContextFilter' to: [/*]
+2018:09:16:02:05 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean- Mapping filter: 'webRequestLoggingFilter' to: [/*]
+2018:09:16:02:05 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean- Mapping filter: 'applicationContextIdFilter' to: [/*]
+2018:09:16:02:05 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- jolokia: No access restrictor found, access to any MBean is allowed
+2018:09:16:02:05 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter- Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2ed0fbae: startup date [Sun Sep 16 02:05:52 CST 2018]; root of context hierarchy
+2018:09:16:02:05 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/admin/update]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.AdminController.update(com.example.shoppingmanager.entity.AdminEntity)
+2018:09:16:02:05 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/admin/delete]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.AdminController.delete(java.lang.Integer[])
+2018:09:16:02:05 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/admin/list]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.AdminController.list(java.util.Map<java.lang.String, java.lang.Object>)
+2018:09:16:02:05 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/admin/save]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.AdminController.save(com.example.shoppingmanager.entity.AdminEntity)
+2018:09:16:02:05 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/admin/info/{id}]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.AdminController.info(java.lang.Integer)
+2018:09:16:02:05 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/admin/checklogin]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.AdminController.checkLogin(org.apache.catalina.servlet4preview.http.HttpServletRequest)
+2018:09:16:02:05 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/admin/logout]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.AdminController.logout(org.apache.catalina.servlet4preview.http.HttpServletRequest)
+2018:09:16:02:05 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/admin/login]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.AdminController.login(org.apache.catalina.servlet4preview.http.HttpServletRequest,java.lang.String,java.lang.String)
+2018:09:16:02:05 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/category/update]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.CategoryController.update(com.example.shoppingmanager.entity.Category)
+2018:09:16:02:05 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/category/delete]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.CategoryController.delete(java.lang.Integer[])
+2018:09:16:02:05 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/category/list]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.CategoryController.list(java.util.Map<java.lang.String, java.lang.Object>)
+2018:09:16:02:05 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/category/save]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.CategoryController.save(com.example.shoppingmanager.entity.Category)
+2018:09:16:02:05 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/category/info/{id}]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.CategoryController.info(java.lang.Integer)
+2018:09:16:02:05 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/category/queryAllCategory]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.CategoryController.getCategory()
+2018:09:16:02:05 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/coperation/update]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.CoperationController.update(com.example.shoppingmanager.entity.Coperation)
+2018:09:16:02:05 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/coperation/delete]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.CoperationController.delete(java.lang.Integer[])
+2018:09:16:02:05 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/coperation/list]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.CoperationController.list(java.util.Map<java.lang.String, java.lang.Object>)
+2018:09:16:02:05 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/coperation/save]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.CoperationController.save(com.example.shoppingmanager.entity.Coperation)
+2018:09:16:02:05 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/coperation/info/{id}]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.CoperationController.info(java.lang.Integer)
+2018:09:16:02:05 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/coperation/changeStatus]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.CoperationController.changeStatus(java.lang.Integer)
+2018:09:16:02:05 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/info/update]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.InformationController.update(com.example.shoppingmanager.entity.Information)
+2018:09:16:02:05 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/info/delete]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.InformationController.delete(java.lang.Integer[])
+2018:09:16:02:05 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/info/list]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.InformationController.list(java.util.Map<java.lang.String, java.lang.Object>)
+2018:09:16:02:05 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/info/save]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.InformationController.save(com.example.shoppingmanager.entity.Information)
+2018:09:16:02:05 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/info/info/{id}]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.InformationController.info(java.lang.Integer)
+2018:09:16:02:05 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/order/update]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.OrderController.update(com.example.shoppingmanager.entity.Order)
+2018:09:16:02:05 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/order/delete]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.OrderController.delete(java.lang.String[])
+2018:09:16:02:05 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/order/list]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.OrderController.list(java.util.Map<java.lang.String, java.lang.Object>)
+2018:09:16:02:05 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/order/info/{id}]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.OrderController.info(java.lang.String)
+2018:09:16:02:05 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/order/forbidden],methods=[POST]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.OrderController.forbidden(java.lang.String)
+2018:09:16:02:05 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/product/update]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.ProductController.update(com.example.shoppingmanager.entity.Product)
+2018:09:16:02:05 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/product/delete]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.ProductController.delete(java.lang.String[])
+2018:09:16:02:05 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/product/list]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.ProductController.list(java.util.Map<java.lang.String, java.lang.Object>)
+2018:09:16:02:05 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/product/save]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.ProductController.save(com.example.shoppingmanager.entity.Product)
+2018:09:16:02:05 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/product/info/{id}]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.ProductController.info(java.lang.Integer)
+2018:09:16:02:05 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/product/recover]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.ProductController.recover(java.lang.String)
+2018:09:16:02:05 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/product/forbidden],methods=[POST]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.ProductController.forbidden(java.lang.String)
+2018:09:16:02:05 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/user/update]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.UserController.update(com.example.shoppingmanager.entity.UserEntity)
+2018:09:16:02:05 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/user/delete]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.UserController.delete(java.lang.Integer[])
+2018:09:16:02:05 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/user/list]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.UserController.list(java.util.Map<java.lang.String, java.lang.Object>)
+2018:09:16:02:05 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/user/save]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.UserController.save(com.example.shoppingmanager.entity.UserEntity)
+2018:09:16:02:05 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/user/info/{id}]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.UserController.info(java.lang.Integer)
+2018:09:16:02:05 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/user/recover]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.UserController.recover(java.lang.Integer)
+2018:09:16:02:05 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/user/forbidden],methods=[POST]}" onto public com.example.shoppingmanager.utils.R com.example.shoppingmanager.controller.UserController.forbidden(java.lang.Integer)
+2018:09:16:02:05 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018:09:16:02:05 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018:09:16:02:05 [main] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping- Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018:09:16:02:05 [main] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping- Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018:09:16:02:05 [main] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping- Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018:09:16:02:05 [main] INFO  org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WelcomePageHandlerMapping- Adding welcome page: class path resource [views/index.html]
+2018:09:16:02:05 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/jolokia/**]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.actuate.endpoint.mvc.JolokiaMvcEndpoint.handle(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+2018:09:16:02:05 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/loggers/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.LoggersMvcEndpoint.get(java.lang.String)
+2018:09:16:02:05 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/loggers/{name:.*}],methods=[POST],consumes=[application/vnd.spring-boot.actuator.v1+json || application/json],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.LoggersMvcEndpoint.set(java.lang.String,java.util.Map<java.lang.String, java.lang.String>)
+2018:09:16:02:05 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/loggers || /loggers.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018:09:16:02:05 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/env/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EnvironmentMvcEndpoint.value(java.lang.String)
+2018:09:16:02:05 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/env || /env.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018:09:16:02:05 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/auditevents || /auditevents.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public org.springframework.http.ResponseEntity<?> org.springframework.boot.actuate.endpoint.mvc.AuditEventsMvcEndpoint.findByPrincipalAndAfterAndType(java.lang.String,java.util.Date,java.lang.String)
+2018:09:16:02:05 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/autoconfig || /autoconfig.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018:09:16:02:05 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/beans || /beans.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018:09:16:02:05 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/info || /info.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018:09:16:02:05 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/health || /health.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.HealthMvcEndpoint.invoke(javax.servlet.http.HttpServletRequest,java.security.Principal)
+2018:09:16:02:05 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/dump || /dump.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018:09:16:02:05 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/logfile || /logfile.json],methods=[GET || HEAD]}" onto public void org.springframework.boot.actuate.endpoint.mvc.LogFileMvcEndpoint.invoke(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws javax.servlet.ServletException,java.io.IOException
+2018:09:16:02:05 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/metrics/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.MetricsMvcEndpoint.value(java.lang.String)
+2018:09:16:02:05 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/metrics || /metrics.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018:09:16:02:05 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/configprops || /configprops.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018:09:16:02:05 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/trace || /trace.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018:09:16:02:05 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/heapdump || /heapdump.json],methods=[GET],produces=[application/octet-stream]}" onto public void org.springframework.boot.actuate.endpoint.mvc.HeapdumpMvcEndpoint.invoke(boolean,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException,javax.servlet.ServletException
+2018:09:16:02:05 [main] INFO  org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping- Mapped "{[/mappings || /mappings.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018:09:16:02:05 [main] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter- Registering beans for JMX exposure on startup
+2018:09:16:02:05 [main] INFO  org.springframework.context.support.DefaultLifecycleProcessor- Starting beans in phase 0
+2018:09:16:02:05 [main] INFO  org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer- Tomcat started on port(s): 8888 (http)
+2018:09:16:02:05 [main] INFO  com.example.shoppingmanager.ShoppingManagerApplication- Started ShoppingManagerApplication in 6.544 seconds (JVM running for 8.438)

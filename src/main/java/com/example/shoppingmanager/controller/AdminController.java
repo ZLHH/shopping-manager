@@ -20,7 +20,6 @@ import java.util.Map;
 
 /**
  * @author chenshun
- * @email sunlightcs@gmail.com
  * @date 2018-03-01 11:27:41
  */
 @RestController

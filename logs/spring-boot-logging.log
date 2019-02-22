@@ -2864,3 +2864,6 @@ Caused by: java.net.ConnectException: Connection timed out: connect
 2018:09:16:02:05 [main] INFO  org.springframework.context.support.DefaultLifecycleProcessor- Starting beans in phase 0
 2018:09:16:02:05 [main] INFO  org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer- Tomcat started on port(s): 8888 (http)
 2018:09:16:02:05 [main] INFO  com.example.shoppingmanager.ShoppingManagerApplication- Started ShoppingManagerApplication in 6.544 seconds (JVM running for 8.438)
+2019:02:22:20:08 [main] INFO  com.example.shoppingmanager.ShoppingManagerApplication- Starting ShoppingManagerApplication on Lenovo-PC with PID 8672 (D:\spring\workspace\shopping-manager\target\classes started by lenovo in D:\spring\workspace\shopping-manager)
+2019:02:22:20:08 [main] INFO  com.example.shoppingmanager.ShoppingManagerApplication- No active profile set, falling back to default profiles: default
+2019:02:22:20:08 [main] INFO  org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext- Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2ed0fbae: startup date [Fri Feb 22 20:08:05 CST 2019]; root of context hierarchy

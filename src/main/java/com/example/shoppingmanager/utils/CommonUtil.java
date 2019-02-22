@@ -8,11 +8,7 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.util.UUID;
 
-/**
- * 通用方法工具类
- *
- * @author liuzifeng
- */
+
 public class CommonUtil {
     private static final String STRING_FORMAT = "appId:%s_requestId:%s_key:%s";
 

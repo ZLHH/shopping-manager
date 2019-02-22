@@ -3,12 +3,7 @@ package com.example.shoppingmanager.utils;
 
 import org.apache.commons.lang3.StringUtils;
 
-/**
- * SQL过滤
- * @author chenshun
- * @email sunlightcs@gmail.com
- * @date 2017-04-01 16:16
- */
+
 public class SQLFilter {
 
     /**

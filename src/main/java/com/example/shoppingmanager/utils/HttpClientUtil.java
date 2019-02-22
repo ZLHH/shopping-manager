@@ -1,8 +1,5 @@
 package com.example.shoppingmanager.utils;
 
-/**
- * Created by chuguoying on 2018/2/27.
- */
 
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;

@@ -5,12 +5,6 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.File;
 import java.io.IOException;
 
-/**
- * @author: xieyougen
- * @email: xieyougen@tuandai.com
- * @description:
- * @date: 2018/2/1 9:30
- */
 public class UploadUtil {
 
     public static String  upload(MultipartFile file, String path) throws IOException {

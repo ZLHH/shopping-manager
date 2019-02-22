@@ -2,7 +2,7 @@ package com.example.shoppingmanager.utils;
 
 /**
  * 应用状态
- * Created by yuanyuzhao on 2017/10/9.
+ * Created by zhanglh on 2017/10/9.
  */
 public enum AppStatus {
 

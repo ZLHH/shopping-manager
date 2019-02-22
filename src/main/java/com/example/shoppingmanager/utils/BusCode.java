@@ -1,7 +1,7 @@
 package com.example.shoppingmanager.utils;
 
 /**
- * Created by yuanyuzhao on 2017/10/11.
+ * Created by zhanglh on 2017/10/11.
  */
 public interface BusCode {
     /**
